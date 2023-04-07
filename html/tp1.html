@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>TP1 - Dinamic Web Programming</title>
+        <link href="//db.onlinewebfonts.com/c/be6ee7dae05b1862ef6f63d5e2145706?family=MonotypeOldEnglishTextW01" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header>
+            <a href="#home"><img height="200px" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.ocalapost.com%2Fwp-content%2Fuploads%2F2014%2F12%2FThe_Pirate_Bay-904x1024.png&f=1&nofb=1&ipt=1806d35411fac7a0b9b9f5555025c001df5e3806c63fffe7a811b85126c5d235&ipo=images" alt="Bateau pitrate"></a>
+            <nav>
+                <ul>
+                    <li><h2><a href="#home">Home</a></h2></li>
+                    <li><h2><a href="#content">Content</a></h2></li>
+                    <li><h2><a href="#contact">Contact</a></h2></li>
+                </ul>
+            </nav>
+            <div>
+                <button>Inscription</button>
+                <button>Connexion</button>
+            </div>
+        </header>
+        <main>
+            <h1>Introduction</h1>
+            <p><abbr title="Du latin [...]"><em>Lorem</em></abbr> ipsum, dolor sit amet consectetur adipisicing elit. Beatae, officiis! Ex eius libero pariatur! Architecto, ducimus ullam, commodi nam dolores nisi fugit, quis deserunt et officiis magnam voluptatem eaque. In. E=mc<sup>2</sup></p>
+            <br>
+            <a class="torrent" href="../img/olivier-carignan-church-14.jpg">Télécharger torrent</a><br>
+            <h1>Développement</h1>
+            <p><abbr title="Du latin [...]"><em>Lorem</em></abbr> ipsum dolor sit amet consectetur adipisicing elit. Magnam ratione soluta eos eum voluptate doloremque, architecto similique, eveniet dolore consequatur distinctio ullam facere cupiditate perferendis ad nam culpa deleniti laboriosam? E=mc<sup>2</sup></p>
+            <br>
+            <a class="torrent" href="../img/olivier-carignan-church-14.jpg">Télécharger torrent</a><br>
+            <h1>Conclusion</h1>
+            <p><abbr title="Du latin [...]"><em>Lorem</em></abbr> ipsum dolor sit amet consectetur adipisicing elit. A sint obcaecati, sit alias temporibus explicabo. Totam numquam iusto, culpa illum reprehenderit harum quidem ab voluptatum, nulla officiis ducimus similique ut. E=mc<sup>2</sup></p>
+            <br>
+            <a class="torrent" href="../img/olivier-carignan-church-14.jpg">Télécharger torrent</a>
+            <br>
+            <h1>Formulaire</h1>
+            <form action="#" method="POST">
+                <table class="form">
+                    <tr>
+                        <td>
+                            <label for="">Pseudo :</label>
+                        </td>
+                        <td>
+                            <input type="text" name="pseudo" placeholder="votre pseudo" maxlength="255">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Mot de pass:</label>
+                        </td>
+                        <td>
+                            <input type="password" name="mdp" placeholder="votre mot de passe" maxlength="255">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Mail:</label>
+                        </td>
+                        <td>
+                            <input type="email" name="mail" placeholder="votre mail" maxlength="255">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Contenu:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="text" placeholder="votre texte" maxlength="255">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <input class="submit" type="submit">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <br>
+            <h1>Liste de Courses</h1>
+            <table class="liste">
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="checkbox">
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        <label for="">Choux</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="checkbox">
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        <label for="">Tomate</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="checkbox">
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        <label for="">Melon</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="checkbox">
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        <label for="">Radis</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="checkbox">
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        <label for="">Oeuf</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input class="submit" type="submit">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <audio loop>
+                <source src="../musique/03-caballero-jeanjass-beatrice-feat-at-solalune-lyrics-video-officielle.mp3" type="audio/mpeg">
+            </audio>
+            <h1 id="audio">audio</h1>
+            <br>
+            <script>
+                var player = document.querySelector('audio');
+                var audio = document.getElementById('audio');
+                var show = false;
+                
+                audio.onclick = function() {
+                    if (show == true){
+                        player.pause();
+                        show = false;
+                    } else {
+                        player.play();
+                        show = true;
+                    }
+                }
+            </script>
+            <iframe width="702" height="395" src="https://www.youtube.com/embed/Gm0h8fAKVLk" title="Alkpote - Draps en sang (feat. Jok&#39;air, Luv Resval) (instrumental)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </main>
+        <footer>
+            <p>Copyright &copy; 2023 Matthys Tachon-Panafieu. Tous droits réservés.</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('//db.onlinewebfonts.com/c/be6ee7dae05b1862ef6f63d5e2145706?family=MonotypeOldEnglishTextW01') format('truetype');
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 1%;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+header {
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+a {
+    color: #0000ee;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+li{
+    margin: 0 10px;
+}
+
+h1{
+    margin: auto;
+    width: fit-content;
+}
+
+p {
+    width: fit-content;
+    margin: auto;
+}
+
+.torrent {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+
+.form {
+    margin: auto;
+}
+
+.form td {
+    text-align: right;
+}
+
+.submit {
+    margin: auto;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.liste {
+    margin: auto;
+}
+
+.liste td {
+    text-align: left;
+    width: 50%;
+}
+
+.liste .checkbox {
+    text-align: right;
+    width: 30%;
+}
+
+label {
+    align-items: right;
+    align-content: right;
+    text-align: right;
+}
+
+#audio{
+    cursor: pointer;
+}
+
+iframe {
+    display: flex;
+    margin: auto;
+}
+
+footer p {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: fit-content;
+}
