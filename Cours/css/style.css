@@ -13,10 +13,11 @@ body {
     margin-bottom: 0;
     margin-top: 0;
     background-color: lightgray;
-    background: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpapercave.com%2Fwp%2Faff3ClR.jpg&f=1&nofb=1&ipt=d7ec80f91a1201570bd41f67b618b1fe9f37511bdd967c0d4870b9f968c6d016&ipo=images) ;
+    background: center / cover no-repeat  url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpapercave.com%2Fwp%2Faff3ClR.jpg&f=1&nofb=1&ipt=d7ec80f91a1201570bd41f67b618b1fe9f37511bdd967c0d4870b9f968c6d016&ipo=images);
 }
 
 header {
+    flex-wrap: wrap;
     margin-top: 1%;
     display: flex;
     align-items: center;
@@ -31,6 +32,7 @@ ul{
     list-style-type: none;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
 }
 
 li{
