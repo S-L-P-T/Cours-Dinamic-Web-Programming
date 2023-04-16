@@ -18,14 +18,20 @@
                 <div>
                     <button class="btntask">Bouton fabriquer torche (coût:...)</button>
                 </div>
-                <div>
-                    <p class="ptasck1">FABRIQUER: FOREUSE T1</p>
+                <div class="ptask1">
+                    <img class="star" src="../img/interface/sparkle.png">
+                    <img src="../img/machines/Drill_T1.webp">
+                    <p>FABRIQUER: FOREUSE T1</p>
                 </div>
-                <div>
-                    <p class="ptasck2">FABRIQUER: ÉOLIENNE</p>
+                <div class="ptask1">
+                    <img class="star" src="../img/interface/sparkle.png">
+                    <img src="../img/machines/Wind_Turbine.webp">
+                    <p>FABRIQUER: ÉOLIENNE</p>
                 </div>
-                <div>
-                    <p class="ptasck3">FABRIQUER ÉCRAN-TERRAFORMATION</p>
+                <div class="ptask2">
+                    <img class="star" src="../img/interface/sparkle.png">
+                    <img src="../img/machines/Screen_-_Terraformation.webp">
+                    <p>FABRIQUER ÉCRAN-TERRAFORMATION</p>
                 </div>
             </div>
             <div class="button">
@@ -35,10 +41,10 @@
                 <div>
                     <div class="idterra">
                         <p>Indice de terraformation</p>
-                        <p>0 Ti</p>
+                        <p><span id="time">0</span> Ti</p>
                     </div>
                     <div>
-                        <img src="../img/worldwide.png">
+                        <img src="../img/interface/worldwide.png">
                     </div>
                 </div>
                 <table>
@@ -83,14 +89,14 @@
         <section>
             <div class="bigbox">
                 <div class="boxcontenur">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div id="minerai1"></div>
+                    <div id="minerai2"></div>
+                    <div id="minerai3"></div>
                 </div>
                 <div class="boxcontenur">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div id="minerai4"></div>
+                    <div id="minerai5"></div>
+                    <div id="minerai6"></div>
                 </div>
             </div>
         </section>
@@ -101,24 +107,25 @@
                     <button>Bouton passer à la base pour reprendre de l'oxygène. Apparait si hab. de survie construit</button>
                 </div>
                 <div class="contenervie">
-                    <img class="imgvie" src="../img/like.png">
+                    <img class="imgvie" src="../img/interface/like.png">
                     <div class="vie">
-                        <div></div>
+                        <div id="vie"></div>
                     </div>
                 </div>
                 <div class="contenereau">
-                    <img class="imgeau" src="../img/drop.png">
+                    <img class="imgeau" src="../img/interface/drop.png">
                     <div class="eau">
-                        <div></div>
+                        <div id="eau"></div>
                     </div>
                 </div>
                 <div class="contenero2">
-                    <img class="imgo2" src="../img/o2.png">
+                    <img class="imgo2" src="../img/interface/o2.png">
                     <div class="o2">
-                        <div></div>
+                        <div id="o2"></div>
                     </div>
                 </div>
             </div>
         </footer>
+        <script src="../js/script.js"></script>
     </body>
 </html>
