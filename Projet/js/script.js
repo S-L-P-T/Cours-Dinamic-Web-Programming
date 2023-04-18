@@ -12,6 +12,13 @@ setInterval(function reduireLargeurvie() {
 },10000)
 document.getElementById('deplacer').addEventListener("click", () => {
     taillevie -= 1;
+    if (taillevie <= 0) {
+        vie.style.width = 0 + "%";
+        console.log('taille vie :'+taillevie);
+    } else {
+        vie.style.width = taillevie + "%";
+        console.log('taille vie :'+taillevie);
+    }
     vie.style.width = taillevie + "%";
     console.log('taille vie :'+taillevie);
 });
@@ -23,8 +30,13 @@ setInterval(function reduireLargeureau() {
 },5000)
 document.getElementById('deplacer').addEventListener("click", () => {
     tailleeau -= 2;
-    vie.style.width = tailleeau + "%";
-    console.log('taille eau :'+tailleeau);
+    if (tailleeau <= 0) {
+        eau.style.width = 0 + "%";
+        console.log('taille eau :'+tailleeau);
+    } else {
+        eau.style.width = tailleeau + "%";
+        console.log('taille eau :'+tailleeau);
+    }
 });
 
 let tailleo2 = 100;
@@ -34,8 +46,13 @@ setInterval(function reduireLargeuro2() {
 },1000)
 document.getElementById('deplacer').addEventListener("click", () => {
     tailleo2 -= 10;
-    vie.style.width = tailleo2 + "%";
-    console.log('taille o2 :'+tailleo2);
+    if (tailleo2 <= 0) {
+        o2.style.width = 0 + "%";
+        console.log('taille o2 :'+tailleo2);
+    } else {
+        o2.style.width = tailleo2 + "%";
+        console.log('taille o2 :'+tailleo2);
+    }
 });
 
 let inc = 1
