@@ -1,16 +1,16 @@
-var vie = document.getElementById('vie');
-var eau = document.getElementById('eau');
-var o2 = document.getElementById('o2');
-var time = document.getElementById('time');
+var vie = document.querySelector('#vie');
+var eau = document.querySelector('#eau');
+var o2 = document.querySelector('#o2');
+var time = document.querySelector('#time');
 
-var deplacer = document.getElementById('deplacer')
+var deplacer = document.querySelector('#deplacer')
 
 let taillevie = 100;
 setInterval(function reduireLargeurvie() {
     taillevie--;
     vie.style.width = taillevie + "%";
 },10000)
-document.getElementById('deplacer').addEventListener("click", () => {
+document.querySelector('#deplacer').addEventListener("click", () => {
     taillevie -= 1;
     if (taillevie <= 0) {
         vie.style.width = 0 + "%";
@@ -28,7 +28,7 @@ setInterval(function reduireLargeureau() {
     tailleeau--;
     eau.style.width = tailleeau + "%";
 },5000)
-document.getElementById('deplacer').addEventListener("click", () => {
+document.querySelector('#deplacer').addEventListener("click", () => {
     tailleeau -= 2;
     if (tailleeau <= 0) {
         eau.style.width = 0 + "%";
@@ -44,7 +44,7 @@ setInterval(function reduireLargeuro2() {
     tailleo2--;
     o2.style.width = tailleo2 + "%";
 },1000)
-document.getElementById('deplacer').addEventListener("click", () => {
+document.querySelector('#deplacer').addEventListener("click", () => {
     tailleo2 -= 10;
     if (tailleo2 <= 0) {
         o2.style.width = 0 + "%";
@@ -78,13 +78,13 @@ for (let i = 1; i <= 6; i++) {
     let img = document.createElement("img");
     img.src = mineraisAleatoire;
     img.width = "50";
-    document.getElementById(`minerai${i}`).appendChild(img);
+    document.querySelector(`#minerai${i}`).appendChild(img);
 }
 
-document.getElementById('deplacer').addEventListener("click", () => {
+document.querySelector('#deplacer').addEventListener("click", () => {
     for (let i = 1; i <= 6; i++) {
         let mineraisAleatoire = minerais[Math.floor(Math.random() * minerais.length)];
-        let img = document.getElementById(`minerai${i}`).querySelector("img");
+        let img = document.querySelector(`#minerai${i}`).querySelector("img");
         img.src = mineraisAleatoire;
         img.width = "50";
     }

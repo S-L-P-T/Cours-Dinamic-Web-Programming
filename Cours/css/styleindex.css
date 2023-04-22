@@ -13,3 +13,14 @@
 .block:hover {
     margin-left: 1000px;
 }
+
+.ligne {
+    display: inline-block;
+    width: 100px;
+    background-color: blue;
+}
+
+.onhover {
+    background-color: blue;
+    width: 100px;
+}

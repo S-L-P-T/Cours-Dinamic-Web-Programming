@@ -24,14 +24,45 @@
 
 // console.log(multiplication(3,2,1));
 
-var proverbe = prompt('Entrez un proverbe');
+// var proverbe = prompt('Entrez un proverbe');
 
 
-var tablproverbe = proverbe.split(' ');
+// var tablproverbe = proverbe.split(' ');
 
-var derniermot = tablproverbe.pop();
-var premiermot = tablproverbe.shift();
+// var derniermot = tablproverbe.pop();
+// var premiermot = tablproverbe.shift();
 
-tablproverbe.unshift(derniermot);
-tablproverbe.push(premiermot);
-console.log(tablproverbe);
+// tablproverbe.unshift(derniermot);
+// tablproverbe.push(premiermot);
+// console.log(tablproverbe);
+
+// var cordx = prompt();
+// var cordy = prompt();
+
+// function coordonée(x,y) {
+//     let dx = {
+//         x: parseInt(x)/2
+//     };
+//     let dy = {
+//         y: parseInt(y)/2
+//     };
+//     let tab = [dx,dy];
+//     return tab;
+// }
+
+// console.log(coordonée(cordx,cordy));
+
+// var p2 = document.querySelector('#p2');
+// p2.style.color = 'red';
+// p2.style.background = 'yellow';
+// p2.style.fontSize = '2rem';
+
+// var tab = [120,150,160];
+// let ligne = document.querySelectorAll('.ligne');
+// for (let i=0; i<ligne.length; i++){
+//     ligne[i].style.height = tab[i]+'px';
+// }
+
+var chanhover = document.querySelector('.onhover');
+var chanclick = document.querySelector('.onclick');
+var cache = document.querySelectorAll('.cache');
