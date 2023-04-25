@@ -10,6 +10,10 @@ body {
 }
 
 header {
+    height: 19vh;
+}
+
+.htop {
     height: fit-content;
     display: flex;
     justify-content: space-between;
@@ -21,18 +25,18 @@ header {
     align-items: start;
 }
 
-header .tasks div img {
+.htop .tasks div img {
     width: 25px;
     height: 25px;
     padding: 1px 0;
     margin-right: 2px;
 }
 
-header .tasks div .star {
+.htop .tasks div .star {
     filter: invert(1);
 }
 
-header .tasks .ptask1, .ptask2 {
+.htop .tasks .ptask1, .ptask2 {
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.60);
@@ -46,12 +50,12 @@ header .tasks .ptask1, .ptask2 {
 }
 
 
-header .tasks div p {
+.htop .tasks div p {
     margin: 2px 0;
     padding-left: 2px;
 }
 
-header div button {
+.htop div button {
     padding: 5px 3px;
     background-color: white;
     border: 0px;
@@ -59,7 +63,7 @@ header div button {
     cursor: pointer;
 }
 
-header div .btntask {
+.htop div .btntask {
     margin: 2px 0;
     padding: 5px 3px;
     width: 400px;
@@ -70,7 +74,7 @@ header div .btntask {
     text-align: start;
 }
 
-header div .chapitre {
+.htop div .chapitre {
     background-color: white;
     width: 250px;
     padding: 5px 2px;
@@ -147,7 +151,7 @@ table tr td {
 
 section {
     display: flex;
-    height: 45vh;
+    height: 60vh;
 }
 
 .bigbox {
@@ -165,10 +169,11 @@ section .boxcontenur div {
     width: 50px;
     height: 50px;
     margin: 50px;
+    cursor: pointer;
 }
 
 footer {
-    height: 20vh;
+    height: 19vh;
 }
 
 footer div {
@@ -184,7 +189,7 @@ footer div div button {
     cursor: pointer;
 }
 
-.contenervie {
+.viecontainer {
     display: flex;
     flex-direction: row;
     margin-top: 5px;
@@ -210,7 +215,7 @@ footer div div button {
     height: 100%;
 }
 
-.contenereau {
+.eaucontainer {
     display: flex;
     flex-direction: row;
     margin-left: 25px;
@@ -236,7 +241,7 @@ footer div div button {
     height: 100%;
 }
 
-.contenero2 {
+.o2container {
     display: flex;
     flex-direction: row;
     margin-left: 50px;
