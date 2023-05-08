@@ -160,20 +160,23 @@ section .boxcontenur div {
     cursor: pointer;
 }
 
+
+
 .end {
-    width: fit-content;
     display: flex;
     position: fixed;
-    top: 50%;
-    left: 30%;
-    margin: auto;
+    top: 30%;
+    right: 20%;
+    left: 20%;
+    width: 60%;
+    height: 40%;
+    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.863);
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
-.end p {
-    width: fit-content;
-    margin: auto;
-    text-align: center;
-}
 
 footer {
     height: 19vh;

@@ -42,6 +42,13 @@ setInterval(function() {
     timecontainer[1].style.width = time[1] + "%";
 },10000)
 
+setInterval(function() {
+    if (time[1]==0||time[2]==0||time[3]==0){
+        document.querySelector(".end").style.display = "flex";
+        document.querySelector(".score").innerHTML = time[0];
+    }
+},100)
+
 for (let i = 0; i <= mineraiscontainer.length-1; i++) {
     let mineraisAleatoire = minerais[Math.floor(Math.random() * minerais.length)];
     let img = document.createElement("img");
@@ -211,4 +218,5 @@ tasks.forEach( input => input.addEventListener('click', e => {
     }
 })
 );
+
 
