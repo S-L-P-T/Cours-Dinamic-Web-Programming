@@ -5,6 +5,7 @@ var o2 = document.querySelector('#o2');
 var timecontainer = document.querySelectorAll('.time');
 var deplacer = document.querySelector('#deplacer');
 var mineraiscontainer = document.querySelectorAll('.minerais');
+var tasks = document.querySelectorAll('.btntask');
 
 //Déclaration des minerais
 var ice = "../img/minerais/ice.webp";
@@ -13,12 +14,15 @@ var iron = "../img/minerais/iron.webp";
 var magnesium = "../img/minerais/magnesium.webp";
 var silicon = "../img/minerais/silicon.webp";
 var titanium = "../img/minerais/titanium.webp";
+var food = "../img/minerais/space_food.webp"
+var seed = "../img/minerais/seed_lirma.webp"
 
 //Déclaration des tableaux
 var time = [0,100,100,100];
 var minerai = ['ice', 'cobalt', 'iron', 'magnesium', 'silicon', 'titanium'];
 var minerais = [ice, cobalt, iron, magnesium, silicon, titanium];
 var materiaux = [];
+var materiauxcollectible = [];
 
 //Fonctions temps
 setInterval(function() {
@@ -38,11 +42,11 @@ setInterval(function() {
     timecontainer[1].style.width = time[1] + "%";
 },10000)
 
-for (let i = 0; i <= minerais.length-1; i++) {
+for (let i = 0; i <= mineraiscontainer.length-1; i++) {
     let mineraisAleatoire = minerais[Math.floor(Math.random() * minerais.length)];
     let img = document.createElement("img");
     img.src = mineraisAleatoire;
-    img.id = i;
+    img.className = i;
     img.width = "50";
     mineraiscontainer[i].appendChild(img);
 }
@@ -69,11 +73,32 @@ deplacer.addEventListener("click", () => {
     } else {
         timecontainer[3].style.width = time[3] + "%";
     }
-    for (let i = 0; i <= minerais.length-1; i++) {
+    for (let i = 0; i <= mineraiscontainer.length-1; i++) {
         let mineraisAleatoire = minerais[Math.floor(Math.random() * minerais.length)];
         let img = mineraiscontainer[i].querySelector("img");
         img.src = mineraisAleatoire;
         img.width = "50";
+    }
+});
+
+function comparerTableauxCapsule(tableau1, tableau2) {
+    for (let i = 0; i < tableau1.length; i++) {
+        const element = tableau1[i];
+        const index = tableau2.indexOf(element);
+        if (index === -1) {
+            return false; // l'élément n'est pas présent dans le deuxième tableau, donc les tableaux ne sont pas identiques
+        }
+    }
+    return true; // tous les éléments ont été trouvés dans le deuxième tableau, donc les tableaux sont identiques
+}
+
+document.querySelector('#capsule').addEventListener("click", () => {
+    let capsule = ['capsule'];
+    if (comparerTableauxCapsule(capsule,materiauxcollectible) == false) {
+
+    } else {
+        time[3] = 100;
+        timecontainer[3].style.width = time[3] + "%";
     }
 });
 
@@ -93,9 +118,97 @@ mineraiscontainer.forEach( input => input.addEventListener('click', e => {
 
         } else {
             materiaux.push(rechercheElement(src,minerai));
-            let id = e.target.id;
-            let img = mineraiscontainer[id].querySelector("img");
+            let cn = e.target.className;
+            let img = mineraiscontainer[cn].querySelector("img");
             img.src = '';
         }
     })
 );
+
+function comparerTableaux(tableau1, tableau2) {
+    for (let i = 0; i < tableau1.length; i++) {
+        const element = tableau1[i];
+        const index = tableau2.indexOf(element);
+        if (index === -1) {
+            return false; // l'élément n'est pas présent dans le deuxième tableau, donc les tableaux ne sont pas identiques
+        }
+        tableau2.splice(index, 1); // enlever l'élément trouvé du deuxième tableau
+    }
+    return true; // tous les éléments ont été trouvés dans le deuxième tableau, donc les tableaux sont identiques
+}
+
+
+
+
+tasks.forEach( input => input.addEventListener('click', e => {
+    let id = (e.target.id);
+    if (id == 0) {
+        let tasksmateriaux = ['ice'];
+        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+
+        } else {
+            materiauxcollectible.push('eau');
+            console.log(materiauxcollectible);
+        }
+    }
+    if (id == 1) {
+        let tasksmateriaux = ['cobalt','cobalt'];
+        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+
+        } else {
+            materiauxcollectible.push('oxygen');
+            console.log(materiauxcollectible);
+        }
+    }
+    if (id == 2) {
+        let tasksmateriaux = ['iron','iron','titanium'];
+        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+
+        } else {
+            materiauxcollectible.push('capsule');
+            console.log(materiauxcollectible);
+            tasks[id].style.display = "none";
+        }
+    }
+    if (id == 3) {
+        let tasksmateriaux = ['silicon','magnesium','magnesium'];
+        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+
+        } else {
+            materiauxcollectible.push('lampe');
+            minerais.push(food,seed)
+            minerai.push('food','seed')
+            console.log(materiauxcollectible);
+            tasks[id].style.display = "none";
+        }
+    }
+    if (id == 4) {
+        let tasksmateriaux = ['iron','titanium'];
+        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+
+        } else {
+            materiauxcollectible.push('foreuse');
+            console.log(materiauxcollectible);
+        }
+    }
+    if (id == 5) {
+        let tasksmateriaux = ['iron','silicon'];
+        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+
+        } else {
+            materiauxcollectible.push('radiateur');
+            console.log(materiauxcollectible);
+        }
+    }
+    if (id == 6) {
+        let tasksmateriaux = ['iron','ice','seed'];
+        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+
+        } else {
+            materiauxcollectible.push('plantation');
+            console.log(materiauxcollectible);
+        }
+    }
+})
+);
+

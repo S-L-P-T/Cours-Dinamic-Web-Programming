@@ -36,7 +36,12 @@ header {
     filter: invert(1);
 }
 
-.htop .tasks .ptask1, .ptask2 {
+.htop .tasks div p {
+    margin: 2px 0;
+    padding-left: 2px;
+}
+
+.htop div .btntask {
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.60);
@@ -49,10 +54,11 @@ header {
     color: white;
 }
 
-
-.htop .tasks div p {
-    margin: 2px 0;
-    padding-left: 2px;
+.htop div .chapitre {
+    background-color: white;
+    width: 250px;
+    padding: 5px 2px;
+    font-size: 15px;
 }
 
 .htop div button {
@@ -61,24 +67,6 @@ header {
     border: 0px;
     text-align: start;
     cursor: pointer;
-}
-
-.htop div .btntask {
-    margin: 2px 0;
-    padding: 5px 3px;
-    width: 400px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 2px;
-    box-shadow: inset 0px 0px 5px 1px black;
-    text-align: start;
-}
-
-.htop div .chapitre {
-    background-color: white;
-    width: 250px;
-    padding: 5px 2px;
-    font-size: 15px;
 }
 
 .button {
@@ -170,6 +158,21 @@ section .boxcontenur div {
     height: 50px;
     margin: 50px;
     cursor: pointer;
+}
+
+.end {
+    width: fit-content;
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 30%;
+    margin: auto;
+}
+
+.end p {
+    width: fit-content;
+    margin: auto;
+    text-align: center;
 }
 
 footer {
