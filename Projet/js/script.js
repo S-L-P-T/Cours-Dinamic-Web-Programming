@@ -47,6 +47,93 @@ setInterval(function() {
         document.querySelector(".end").style.display = "flex";
         document.querySelector(".score").innerHTML = time[0];
     }
+
+
+
+
+    let eau = ['ice'];
+    if (comparerTableauxCapsule(eau,materiaux) == false) {
+        document.getElementById('0').style.color = "white";
+        document.getElementById('0').style.background = "rgba(0, 0, 0, 0.60)";
+        document.getElementById('0').querySelector('.star').style.filter = 'invert(1)';
+    } else {
+        document.getElementById('0').style.color = "black";
+        document.getElementById('0').style.background = "white";
+        document.getElementById('0').querySelector('.star').style.filter = 'invert(0)';
+    }
+
+
+    let o2 = ['cobalt','cobalt'];
+    if (comparerTableauxCapsule(o2,materiaux) == false) {
+        document.getElementById('1').style.color = "white";
+        document.getElementById('1').style.background = "rgba(0, 0, 0, 0.60)";
+        document.getElementById('1').querySelector('.star').style.filter = 'invert(1)';
+    } else {
+        document.getElementById('1').style.color = "black";
+        document.getElementById('1').style.background = "white";
+        document.getElementById('1').querySelector('.star').style.filter = 'invert(0)';
+    }
+
+
+    let habitacle = ['iron','iron','titanium'];
+    if (comparerTableauxCapsule(habitacle,materiaux) == false) {
+        document.getElementById('2').style.color = "white";
+        document.getElementById('2').style.background = "rgba(0, 0, 0, 0.60)";
+        document.getElementById('2').querySelector('.star').style.filter = 'invert(1)';
+    } else {
+        document.getElementById('2').style.color = "black";
+        document.getElementById('2').style.background = "white";
+        document.getElementById('2').querySelector('.star').style.filter = 'invert(0)';
+    }
+
+
+    let lampe = ['silicon','magnesium','magnesium'];
+    if (comparerTableauxCapsule(lampe,materiaux) == false) {
+        document.getElementById('3').style.color = "white";
+        document.getElementById('3').style.background = "rgba(0, 0, 0, 0.60)";
+        document.getElementById('3').querySelector('.star').style.filter = 'invert(1)';
+    } else {
+        document.getElementById('3').style.color = "black";
+        document.getElementById('3').style.background = "white";
+        document.getElementById('3').querySelector('.star').style.filter = 'invert(0)';
+    }
+
+
+    let foreuse = ['iron','titanium'];
+    if (comparerTableauxCapsule(foreuse,materiaux) == false) {
+        document.getElementById('4').style.color = "white";
+        document.getElementById('4').style.background = "rgba(0, 0, 0, 0.60)";
+        document.getElementById('4').querySelector('.star').style.filter = 'invert(1)';
+    } else {
+        document.getElementById('4').style.color = "black";
+        document.getElementById('4').style.background = "white";
+        document.getElementById('4').querySelector('.star').style.filter = 'invert(0)';
+    }
+
+
+    let radiateur = ['iron','silicon'];
+    if (comparerTableauxCapsule(radiateur,materiaux) == false) {
+        document.getElementById('5').style.color = "white";
+        document.getElementById('5').style.background = "rgba(0, 0, 0, 0.60)";
+        document.getElementById('5').querySelector('.star').style.filter = 'invert(1)';
+    } else {
+        document.getElementById('5').style.color = "black";
+        document.getElementById('5').style.background = "white";
+        document.getElementById('5').querySelector('.star').style.filter = 'invert(0)';
+    }
+
+
+    let plantation = ['iron','ice','seed'];
+    if (comparerTableauxCapsule(plantation,materiaux) == false) {
+        document.getElementById('6').style.color = "white";
+        document.getElementById('6').style.background = "rgba(0, 0, 0, 0.60)";
+        document.getElementById('6').querySelector('.star').style.filter = 'invert(1)';
+    } else {
+        document.getElementById('6').style.color = "black";
+        document.getElementById('6').style.background = "white";
+        document.getElementById('6').querySelector('.star').style.filter = 'invert(0)';
+    }
+
 },100)
 
 for (let i = 0; i <= mineraiscontainer.length-1; i++) {

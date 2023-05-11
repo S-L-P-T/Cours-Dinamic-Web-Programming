@@ -10,7 +10,11 @@ body {
 }
 
 header {
-    height: 19vh;
+    height: fit-content;
+}
+
+#0 {
+    width: 100px;
 }
 
 .htop {
@@ -139,7 +143,7 @@ table tr td {
 
 section {
     display: flex;
-    height: 60vh;
+    height: fit-content;
 }
 
 .bigbox {
@@ -179,7 +183,7 @@ section .boxcontenur div {
 
 
 footer {
-    height: 19vh;
+    height: fit-content;
 }
 
 footer div {
