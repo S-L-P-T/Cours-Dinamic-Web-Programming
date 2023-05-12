@@ -136,6 +136,8 @@ setInterval(function() {
 
 },100)
 
+
+
 for (let i = 0; i <= mineraiscontainer.length-1; i++) {
     let mineraisAleatoire = minerais[Math.floor(Math.random() * minerais.length)];
     let img = document.createElement("img");

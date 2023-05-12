@@ -63,6 +63,53 @@
 //     ligne[i].style.height = tab[i]+'px';
 // }
 
-var chanhover = document.querySelector('.onhover');
-var chanclick = document.querySelector('.onclick');
-var cache = document.querySelectorAll('.cache');
+// var chanhover = document.querySelector('.onhover');
+// var chanclick = document.querySelector('.onclick');
+// var cacheA = document.querySelector('.cacheA');
+// var cacheB = document.querySelector('.cacheB');
+
+// chanhover.onmouseover = function(){
+//     chanhover.style.color = 'white';
+// }
+
+// chanclick.onclick = function(){
+//     chanclick.style.display = 'none';
+// }
+
+// cacheB.onclick = function(){
+//     if (cacheA.style.display == 'none'){
+//         cacheA.style.display = '';
+//     } else {
+//         cacheA.style.display = 'none';
+//     }
+// }
+
+
+// var pos = document.querySelector('#position');
+// document.onmousemove = function(e){
+//     pos.innerHTML = "coordonées : <br> X : " + e.clientX;
+//     pos.innerHTML += "<br> Y : " + e.clientY;
+//     if (e.clientY > 650){
+//         console.log('stop trop bas');
+//     } else {
+
+//     }
+// }
+
+function Vehicule(roues, vitessemax, vitesseactuelle, kilometrage){
+    this.roues = roues;
+    this.vitessemax = vitessemax;
+    this.vitesseactuelle = vitesseactuelle;
+    this.kilometrage = kilometrage;
+}
+
+function Moto(roues, vitessemax, vitesseactuelle, kilometrage){
+    Vehicule.call(this,roues,vitessemax,vitesseactuelle,kilometrage);
+}
+
+Moto.prototype = new Moto();
+Moto.prototype.constructor = Moto;
+
+var moto1 = new Moto(2,50,0,0);
+console.log(moto1.vitessemax);
+console.log(moto1.votesseactuelle);
