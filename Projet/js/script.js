@@ -7,6 +7,7 @@ var statscontainer = document.querySelectorAll('.stats');
 var deplacer = document.querySelector('#deplacer');
 var mineraiscontainer = document.querySelectorAll('.minerais');
 var tasks = document.querySelectorAll('.btntask');
+var contenu = document.querySelectorAll('.tab2row');
 
 //Déclaration des minerais
 var ice = "../img/minerais/ice.webp";
@@ -19,6 +20,7 @@ var food = "../img/minerais/space_food.webp"
 var seed = "../img/minerais/seed_lirma.webp"
 
 //Déclaration des tableaux
+var denomb = [0,0,0,0,0];
 var time = 0;
 var stats = [100,100,100];
 var minerai = ['ice', 'cobalt', 'iron', 'magnesium', 'silicon', 'titanium'];
@@ -30,18 +32,18 @@ var materiauxcollectible = [];
 setInterval(function() {
     stats[2]--;
     time++
-    statscontainer[2].style.width = stats[2] + "%";
+    statscontainer[2].style.width = `${stats[2]}%`;
     timecontainer.innerHTML = time;
 },1000)
 
 setInterval(function() {
     stats[1]--;
-    statscontainer[1].style.width = stats[1] + "%";
+    statscontainer[1].style.width = `${stats[1]}%`;
 },5000)
 
 setInterval(function() {
     stats[0]--;
-    statscontainer[0].style.width = stats[0] + "%";
+    statscontainer[0].style.width = `${stats[0]}%`;
 },10000)
 
 setInterval(function() {
@@ -134,6 +136,49 @@ setInterval(function() {
         document.getElementById('6').style.color = "black";
         document.getElementById('6').style.background = "white";
         document.getElementById('6').querySelector('.star').style.filter = 'invert(0)';
+    }
+
+
+
+
+
+    if (comparerTableaux(['eau'],materiauxcollectible) == false) {
+        
+    } else {
+        denomb[0]++
+        contenu[0].innerHTML = denomb[0];
+    }
+
+
+    if (comparerTableaux(['oxygen'],materiauxcollectible) == false) {
+        
+    } else {
+        denomb[1]++
+        contenu[1].innerHTML = denomb[1];
+    }
+
+
+    if (comparerTableaux(['foreuse'],materiauxcollectible) == false) {
+        
+    } else {
+        denomb[2]++
+        contenu[2].innerHTML = denomb[2];
+    }
+
+
+    if (comparerTableaux(['radiateur'],materiauxcollectible) == false) {
+        
+    } else {
+        denomb[3]++
+        contenu[3].innerHTML = denomb[3];
+    }
+
+
+    if (comparerTableaux(['plantation'],materiauxcollectible) == false) {
+        
+    } else {
+        denomb[4]++
+        contenu[4].innerHTML = denomb[4];
     }
 },100)
 
@@ -316,7 +361,6 @@ tasks.forEach( input => input.addEventListener('click', e => {
             console.log(materiauxcollectible);
         }
     }
-})
-);
+}));
 
 

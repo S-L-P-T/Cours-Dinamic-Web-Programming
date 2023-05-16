@@ -137,8 +137,7 @@ table tr .tab2row {
 
 table tr td {
     width: 100px;
-    text-align: left;
-    padding-left: 4%;
+    text-align: center;
 }
 
 section {
