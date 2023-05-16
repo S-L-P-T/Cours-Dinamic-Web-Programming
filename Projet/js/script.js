@@ -2,7 +2,8 @@
 var vie = document.querySelector('#vie');
 var eau = document.querySelector('#eau');
 var o2 = document.querySelector('#o2');
-var timecontainer = document.querySelectorAll('.time');
+var timecontainer = document.querySelector('.time');
+var statscontainer = document.querySelectorAll('.stats');
 var deplacer = document.querySelector('#deplacer');
 var mineraiscontainer = document.querySelectorAll('.minerais');
 var tasks = document.querySelectorAll('.btntask');
@@ -18,7 +19,8 @@ var food = "../img/minerais/space_food.webp"
 var seed = "../img/minerais/seed_lirma.webp"
 
 //Déclaration des tableaux
-var time = [0,100,100,100];
+var time = 0;
+var stats = [100,100,100];
 var minerai = ['ice', 'cobalt', 'iron', 'magnesium', 'silicon', 'titanium'];
 var minerais = [ice, cobalt, iron, magnesium, silicon, titanium];
 var materiaux = [];
@@ -26,26 +28,26 @@ var materiauxcollectible = [];
 
 //Fonctions temps
 setInterval(function() {
-    time[3]--;
-    time[0]++
-    timecontainer[3].style.width = time[3] + "%";
-    timecontainer[0].innerHTML = time[0];
+    stats[2]--;
+    time++
+    statscontainer[2].style.width = stats[2] + "%";
+    timecontainer.innerHTML = time;
 },1000)
 
 setInterval(function() {
-    time[2]--;
-    timecontainer[2].style.width = time[2] + "%";
+    stats[1]--;
+    statscontainer[1].style.width = stats[1] + "%";
 },5000)
 
 setInterval(function() {
-    time[1]--;
-    timecontainer[1].style.width = time[1] + "%";
+    stats[0]--;
+    statscontainer[0].style.width = stats[0] + "%";
 },10000)
 
 setInterval(function() {
-    if (time[1]==0||time[2]==0||time[3]==0){
+    if (stats[0]==0||stats[1]==0||stats[2]==0){
         document.querySelector(".end").style.display = "flex";
-        document.querySelector(".score").innerHTML = time[0];
+        document.querySelector(".score").innerHTML = time;
     }
 
 
@@ -133,7 +135,6 @@ setInterval(function() {
         document.getElementById('6').style.background = "white";
         document.getElementById('6').querySelector('.star').style.filter = 'invert(0)';
     }
-
 },100)
 
 
@@ -148,26 +149,26 @@ for (let i = 0; i <= mineraiscontainer.length-1; i++) {
 }
 
 deplacer.addEventListener("click", () => {
-    time[1] = time[1]-1;
-    time[2] = time[2]-5;
-    time[3] = time[3]-10;
-    if (time[1] <= 0) {
-        time[1] = 0;
-        timecontainer[1].style.width = time[1] + "%";
+    stats[0] = stats[0]-1;
+    stats[1] = stats[1]-5;
+    stats[2] = stats[2]-10;
+    if (stats[0] <= 0) {
+        stats[0] = 0;
+        statscontainer[0].style.width = stats[0] + "%";
     } else {
-        timecontainer[1].style.width = time[1] + "%";
+        statscontainer[0].style.width = stats[0] + "%";
     }
-    if (time[2] <= 0) {
-        time[2] = 0;
-        timecontainer[2].style.width = time[2] + "%";
+    if (stats[1] <= 0) {
+        stats[1] = 0;
+        statscontainer[1].style.width = stats[1] + "%";
     } else {
-        timecontainer[2].style.width = time[2] + "%";
+        statscontainer[1].style.width = stats[1] + "%";
     }
-    if (time[3] <= 0) {
-        time[3] = 0;
-        timecontainer[3].style.width = time[3] + "%";
+    if (stats[2] <= 0) {
+        stats[2] = 0;
+        statscontainer[2].style.width = stats[2] + "%";
     } else {
-        timecontainer[3].style.width = time[3] + "%";
+        statscontainer[2].style.width = stats[2] + "%";
     }
     for (let i = 0; i <= mineraiscontainer.length-1; i++) {
         let mineraisAleatoire = minerais[Math.floor(Math.random() * minerais.length)];
@@ -178,14 +179,24 @@ deplacer.addEventListener("click", () => {
 });
 
 function comparerTableauxCapsule(tableau1, tableau2) {
-    for (let i = 0; i < tableau1.length; i++) {
-        const element = tableau1[i];
-        const index = tableau2.indexOf(element);
+    // Copie des tableaux pour éviter de les modifier directement
+    let copieTableau1 = [...tableau1];
+    let copieTableau2 = [...tableau2];
+
+    // Vérification du nombre d'occurrences de chaque élément dans le tableau à comparer
+    for (let i = 0; i < copieTableau1.length; i++) {
+        let element = copieTableau1[i];
+        let index = copieTableau2.indexOf(element);
+        
         if (index === -1) {
-            return false; // l'élément n'est pas présent dans le deuxième tableau, donc les tableaux ne sont pas identiques
+            return false; // L'élément n'est pas présent dans le deuxième tableau, les tableaux ne sont pas identiques
         }
+        
+        // Suppression de l'élément trouvé dans le deuxième tableau pour ne pas le réutiliser
+        copieTableau2.splice(index, 1);
     }
-    return true; // tous les éléments ont été trouvés dans le deuxième tableau, donc les tableaux sont identiques
+    
+    return true; // Vérification qu'il n'y a pas d'éléments restants dans le deuxième tableau
 }
 
 document.querySelector('#capsule').addEventListener("click", () => {
@@ -193,8 +204,8 @@ document.querySelector('#capsule').addEventListener("click", () => {
     if (comparerTableauxCapsule(capsule,materiauxcollectible) == false) {
 
     } else {
-        time[3] = 100;
-        timecontainer[3].style.width = time[3] + "%";
+        stats[2] = 100;
+        statscontainer[2].style.width = stats[2] + "%";
     }
 });
 
@@ -223,8 +234,8 @@ mineraiscontainer.forEach( input => input.addEventListener('click', e => {
 
 function comparerTableaux(tableau1, tableau2) {
     for (let i = 0; i < tableau1.length; i++) {
-        const element = tableau1[i];
-        const index = tableau2.indexOf(element);
+        let element = tableau1[i];
+        let index = tableau2.indexOf(element);
         if (index === -1) {
             return false; // l'élément n'est pas présent dans le deuxième tableau, donc les tableaux ne sont pas identiques
         }
