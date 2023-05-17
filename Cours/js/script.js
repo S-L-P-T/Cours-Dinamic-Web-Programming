@@ -96,20 +96,33 @@
 //     }
 // }
 
-function Vehicule(roues, vitessemax, vitesseactuelle, kilometrage){
-    this.roues = roues;
-    this.vitessemax = vitessemax;
-    this.vitesseactuelle = vitesseactuelle;
-    this.kilometrage = kilometrage;
-}
+// function Vehicule(roues, vitessemax, vitesseactuelle, kilometrage){
+//     this.roues = roues;
+//     this.vitessemax = vitessemax;
+//     this.vitesseactuelle = vitesseactuelle;
+//     this.kilometrage = kilometrage;
+// }
 
-function Moto(roues, vitessemax, vitesseactuelle, kilometrage){
-    Vehicule.call(this,roues,vitessemax,vitesseactuelle,kilometrage);
-}
+// function Moto(roues, vitessemax, vitesseactuelle, kilometrage){
+//     Vehicule.call(this,roues,vitessemax,vitesseactuelle,kilometrage);
+// }
 
-Moto.prototype = new Moto();
-Moto.prototype.constructor = Moto;
+// Moto.prototype = new Moto();
+// Moto.prototype.constructor = Moto;
 
-var moto1 = new Moto(2,50,0,0);
-console.log(moto1.vitessemax);
-console.log(moto1.votesseactuelle);
+// var moto1 = new Moto(2,50,0,0);
+// console.log(moto1.vitessemax);
+// console.log(moto1.votesseactuelle);
+
+// var imgrotation = document.querySelectorAll(".rotateimg");
+// var index=0;
+
+// setInterval(function() {
+//     imgrotation[index].style.display = "none";
+//     if(index < imgrotation.length - 1){
+//         index++;
+//     } else {
+//         index=0;
+//     }
+//     imgrotation[index].style.display = "block";
+// },2000);
