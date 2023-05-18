@@ -20,7 +20,7 @@ var food = "../img/minerais/space_food.webp"
 var seed = "../img/minerais/seed_lirma.webp"
 
 //Déclaration des tableaux
-var denomb = [0,0,0,0,0];
+var denomb = [0,0,0,0,0,0];
 var time = 0;
 var stats = [100,100,100];
 var minerai = ['ice', 'cobalt', 'iron', 'magnesium', 'silicon', 'titanium'];
@@ -139,11 +139,17 @@ setInterval(function() {
     }
 
 
+    if (comparerTableaux(['lampe'],materiauxcollectible) == false) {
 
+    } else {
+        let food = document.querySelectorAll('td[style]');
+        food[0].style.display = 'block';
+        food[1].style.display = 'block';
+    }
 
 
     if (comparerTableaux(['eau'],materiauxcollectible) == false) {
-        
+
     } else {
         denomb[0]++
         contenu[0].innerHTML = denomb[0];
@@ -151,38 +157,44 @@ setInterval(function() {
 
 
     if (comparerTableaux(['oxygen'],materiauxcollectible) == false) {
-        
+
     } else {
         denomb[1]++
         contenu[1].innerHTML = denomb[1];
     }
 
 
-    if (comparerTableaux(['foreuse'],materiauxcollectible) == false) {
-        
+    if (comparerTableaux(['food'],materiaux) == false) {
+
     } else {
         denomb[2]++
         contenu[2].innerHTML = denomb[2];
     }
 
 
-    if (comparerTableaux(['radiateur'],materiauxcollectible) == false) {
-        
+    if (comparerTableaux(['foreuse'],materiauxcollectible) == false) {
+
     } else {
         denomb[3]++
         contenu[3].innerHTML = denomb[3];
     }
 
 
-    if (comparerTableaux(['plantation'],materiauxcollectible) == false) {
-        
+    if (comparerTableaux(['radiateur'],materiauxcollectible) == false) {
+
     } else {
         denomb[4]++
         contenu[4].innerHTML = denomb[4];
     }
+
+
+    if (comparerTableaux(['plantation'],materiauxcollectible) == false) {
+
+    } else {
+        denomb[5]++
+        contenu[5].innerHTML = denomb[5];
+    }
 },100)
-
-
 
 for (let i = 0; i <= mineraiscontainer.length-1; i++) {
     let mineraisAleatoire = minerais[Math.floor(Math.random() * minerais.length)];
@@ -199,21 +211,21 @@ deplacer.addEventListener("click", () => {
     stats[2] = stats[2]-10;
     if (stats[0] <= 0) {
         stats[0] = 0;
-        statscontainer[0].style.width = stats[0] + "%";
+        statscontainer[0].style.width = `${stats[0]}%`;
     } else {
-        statscontainer[0].style.width = stats[0] + "%";
+        statscontainer[0].style.width = `${stats[0]}%`;
     }
     if (stats[1] <= 0) {
         stats[1] = 0;
-        statscontainer[1].style.width = stats[1] + "%";
+        statscontainer[1].style.width = `${stats[1]}%`;
     } else {
-        statscontainer[1].style.width = stats[1] + "%";
+        statscontainer[1].style.width = `${stats[1]}%`;
     }
     if (stats[2] <= 0) {
         stats[2] = 0;
-        statscontainer[2].style.width = stats[2] + "%";
+        statscontainer[2].style.width = `${stats[2]}%`;
     } else {
-        statscontainer[2].style.width = stats[2] + "%";
+        statscontainer[2].style.width = `${stats[2]}%`;
     }
     for (let i = 0; i <= mineraiscontainer.length-1; i++) {
         let mineraisAleatoire = minerais[Math.floor(Math.random() * minerais.length)];
@@ -244,13 +256,46 @@ function comparerTableauxCapsule(tableau1, tableau2) {
     return true; // Vérification qu'il n'y a pas d'éléments restants dans le deuxième tableau
 }
 
+document.querySelector('#manger').addEventListener("click", () => {
+    if(denomb[2]!=0){
+        denomb[2]--
+        contenu[2].innerHTML = denomb[2];
+        stats[0] = 100;
+        statscontainer[0].style.width = `${stats[0]}%`;
+    } else {
+
+    }
+});
+
+document.querySelector('#respirer').addEventListener("click", () => {
+    if(denomb[1]!=0){
+        denomb[1]--
+        contenu[1].innerHTML = denomb[1];
+        stats[2] = 100;
+        statscontainer[2].style.width = `${stats[2]}%`;
+    } else {
+
+    }
+});
+
+document.querySelector('#boire').addEventListener("click", () => {
+    if(denomb[0]!=0){
+        denomb[0]--
+        contenu[0].innerHTML = denomb[0];
+        stats[1] = 100;
+        statscontainer[1].style.width = `${stats[1]}%`;
+    } else {
+
+    }
+});
+
 document.querySelector('#capsule').addEventListener("click", () => {
     let capsule = ['capsule'];
     if (comparerTableauxCapsule(capsule,materiauxcollectible) == false) {
 
     } else {
         stats[2] = 100;
-        statscontainer[2].style.width = stats[2] + "%";
+        statscontainer[2].style.width = `${stats[2]}%`;
     }
 });
 

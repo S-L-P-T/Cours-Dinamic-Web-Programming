@@ -182,7 +182,10 @@ section .boxcontenur div {
 
 
 footer {
-    height: fit-content;
+    height: 245px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
 footer div {
@@ -196,6 +199,7 @@ footer div div button {
     background-color: white;
     border: 0px;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 .viecontainer {
@@ -204,7 +208,7 @@ footer div div button {
     margin-top: 5px;
 }
 
-.imgvie {
+img[alt=coeur] {
     width: 40px;
     height: 40px;
     filter: invert(1);
@@ -230,7 +234,7 @@ footer div div button {
     margin-left: 25px;
 }
 
-.imgeau {
+img[alt=eau]  {
     width: 40px;
     height: 40px;
     filter: invert(1);
@@ -256,7 +260,7 @@ footer div div button {
     margin-left: 50px;
 }
 
-.imgo2 {
+img[alt=o2] {
     width: 40px;
     height: 40px;
     filter: invert(1);
