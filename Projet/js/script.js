@@ -56,86 +56,121 @@ setInterval(function() {
 
 
     let eau = ['ice'];
+    let eau1 = document.getElementById('0');
     if (comparerTableauxCapsule(eau,materiaux) == false) {
-        document.getElementById('0').style.color = "white";
-        document.getElementById('0').style.background = "rgba(0, 0, 0, 0.60)";
-        document.getElementById('0').querySelector('.star').style.filter = 'invert(1)';
+        eau1.style.color = "white";
+        eau1.style.background = "rgba(0, 0, 0, 0.60)";
+        eau1.style.border = "1px white solid";
+        eau1.style.boxShadow = "inset 0px 0px 5px 1px white";
+        eau1.querySelector('.star').style.filter = 'invert(1)';
     } else {
-        document.getElementById('0').style.color = "black";
-        document.getElementById('0').style.background = "white";
-        document.getElementById('0').querySelector('.star').style.filter = 'invert(0)';
+        eau1.style.color = "black";
+        eau1.style.background = "white";
+        eau1.style.border = "1px black solid";
+        eau1.style.boxShadow = "inset 0px 0px 5px 1px black";
+        eau1.querySelector('.star').style.filter = 'invert(0)';
     }
 
 
     let o2 = ['cobalt','cobalt'];
+    let o21 = document.getElementById('1');
     if (comparerTableauxCapsule(o2,materiaux) == false) {
-        document.getElementById('1').style.color = "white";
-        document.getElementById('1').style.background = "rgba(0, 0, 0, 0.60)";
-        document.getElementById('1').querySelector('.star').style.filter = 'invert(1)';
+        o21.style.color = "white";
+        o21.style.background = "rgba(0, 0, 0, 0.60)";
+        o21.style.border = "1px white solid";
+        o21.style.boxShadow = "inset 0px 0px 5px 1px white";
+        o21.querySelector('.star').style.filter = 'invert(1)';
     } else {
-        document.getElementById('1').style.color = "black";
-        document.getElementById('1').style.background = "white";
-        document.getElementById('1').querySelector('.star').style.filter = 'invert(0)';
+        o21.style.color = "black";
+        o21.style.background = "white";
+        o21.style.border = "1px black solid";
+        o21.style.boxShadow = "inset 0px 0px 5px 1px black";
+        o21.querySelector('.star').style.filter = 'invert(0)';
     }
 
 
     let habitacle = ['iron','iron','titanium'];
+    let habitacle1 = document.getElementById('2');
     if (comparerTableauxCapsule(habitacle,materiaux) == false) {
-        document.getElementById('2').style.color = "white";
-        document.getElementById('2').style.background = "rgba(0, 0, 0, 0.60)";
-        document.getElementById('2').querySelector('.star').style.filter = 'invert(1)';
+        habitacle1.style.color = "white";
+        habitacle1.style.background = "rgba(0, 0, 0, 0.60)";
+        habitacle1.style.border = "1px white solid";
+        habitacle1.style.boxShadow = "inset 0px 0px 5px 1px white";
+        habitacle1.querySelector('.star').style.filter = 'invert(1)';
     } else {
-        document.getElementById('2').style.color = "black";
-        document.getElementById('2').style.background = "white";
-        document.getElementById('2').querySelector('.star').style.filter = 'invert(0)';
+        habitacle1.style.color = "black";
+        habitacle1.style.background = "white";
+        habitacle1.style.border = "1px black solid";
+        habitacle1.style.boxShadow = "inset 0px 0px 5px 1px black";
+        habitacle1.querySelector('.star').style.filter = 'invert(0)';
     }
 
 
     let lampe = ['silicon','magnesium','magnesium'];
+    let lampe1 = document.getElementById('3');
     if (comparerTableauxCapsule(lampe,materiaux) == false) {
-        document.getElementById('3').style.color = "white";
-        document.getElementById('3').style.background = "rgba(0, 0, 0, 0.60)";
-        document.getElementById('3').querySelector('.star').style.filter = 'invert(1)';
+        lampe1.style.color = "white";
+        lampe1.style.background = "rgba(0, 0, 0, 0.60)";
+        lampe1.style.border = "1px white solid";
+        lampe1.style.boxShadow = "inset 0px 0px 5px 1px whitelampe1";
+        lampe1.querySelector('.star').style.filter = 'invert(1)';
     } else {
-        document.getElementById('3').style.color = "black";
-        document.getElementById('3').style.background = "white";
-        document.getElementById('3').querySelector('.star').style.filter = 'invert(0)';
+        lampe1.style.color = "black";
+        lampe1.style.background = "white";
+        lampe1.style.border = "1px black solid";
+        lampe1.style.boxShadow = "inset 0px 0px 5px 1px black";
+        lampe1.querySelector('.star').style.filter = 'invert(0)';
     }
 
 
     let foreuse = ['iron','titanium'];
+    let foreuse1 = document.getElementById('4');
     if (comparerTableauxCapsule(foreuse,materiaux) == false) {
-        document.getElementById('4').style.color = "white";
-        document.getElementById('4').style.background = "rgba(0, 0, 0, 0.60)";
-        document.getElementById('4').querySelector('.star').style.filter = 'invert(1)';
+        foreuse1.style.color = "white";
+        foreuse1.style.background = "rgba(0, 0, 0, 0.60)";
+        foreuse1.style.border = "1px white solid";
+        foreuse1.style.boxShadow = "inset 0px 0px 5px 1px white";
+        foreuse1.querySelector('.star').style.filter = 'invert(1)';
     } else {
-        document.getElementById('4').style.color = "black";
-        document.getElementById('4').style.background = "white";
-        document.getElementById('4').querySelector('.star').style.filter = 'invert(0)';
+        foreuse1.style.color = "black";
+        foreuse1.style.background = "white";
+        foreuse1.style.border = "1px black solid";
+        foreuse1.style.boxShadow = "inset 0px 0px 5px 1px black";
+        foreuse1.querySelector('.star').style.filter = 'invert(0)';
     }
 
 
     let radiateur = ['iron','silicon'];
+    let radiateur1 = document.getElementById('5');
     if (comparerTableauxCapsule(radiateur,materiaux) == false) {
-        document.getElementById('5').style.color = "white";
-        document.getElementById('5').style.background = "rgba(0, 0, 0, 0.60)";
-        document.getElementById('5').querySelector('.star').style.filter = 'invert(1)';
+        radiateur1.style.color = "white";
+        radiateur1.style.background = "rgba(0, 0, 0, 0.60)";
+        radiateur1.style.border = "1px white solid";
+        radiateur1.style.boxShadow = "inset 0px 0px 5px 1px white";
+        radiateur1.querySelector('.star').style.filter = 'invert(1)';
     } else {
-        document.getElementById('5').style.color = "black";
-        document.getElementById('5').style.background = "white";
-        document.getElementById('5').querySelector('.star').style.filter = 'invert(0)';
+        radiateur1.style.color = "black";
+        radiateur1.style.background = "white";
+        radiateur1.style.border = "1px black solid";
+        radiateur1.style.boxShadow = "inset 0px 0px 5px 1px black";
+        radiateur1.querySelector('.star').style.filter = 'invert(0)';
     }
 
 
     let plantation = ['iron','ice','seed'];
+    let plantation1 = document.getElementById('6');
     if (comparerTableauxCapsule(plantation,materiaux) == false) {
-        document.getElementById('6').style.color = "white";
-        document.getElementById('6').style.background = "rgba(0, 0, 0, 0.60)";
-        document.getElementById('6').querySelector('.star').style.filter = 'invert(1)';
+        plantation1.style.color = "white";
+        plantation1.style.background = "rgba(0, 0, 0, 0.60)";
+        plantation1.style.border = "1px white solid";
+        plantation1.style.boxShadow = "inset 0px 0px 5px 1px white";
+        plantation1.querySelector('.star').style.filter = 'invert(1)';
     } else {
-        document.getElementById('6').style.color = "black";
-        document.getElementById('6').style.background = "white";
-        document.getElementById('6').querySelector('.star').style.filter = 'invert(0)';
+        plantation1.style.color = "black";
+        plantation1.style.background = "white";
+        plantation1.style.border = "1px black solid";
+        plantation1.style.boxShadow = "inset 0px 0px 5px 1px black";
+        plantation1.querySelector('.star').style.filter = 'invert(0)';
     }
 
 
