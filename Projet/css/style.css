@@ -11,7 +11,7 @@ html {
 body {
     background: top / cover no-repeat url(../img/Sans\ titre.png);
     margin: 1% 3%;
-    height: 99%;
+    height: 96%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
