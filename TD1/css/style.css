@@ -1,0 +1,35 @@
+/* div{
+    height: 600px;
+    width: 300px;
+    background-color: blue;
+    color: white;
+} */
+
+
+
+.chevalRouge {
+    width: fit-content;
+    border: 2px solid red;
+    border-radius: 100%;
+    padding: 1px;
+}
+.chevalVert {
+    width: fit-content;
+    border: 1px solid green;
+    border-radius: 100%;
+    padding: 1px;
+}
+.chevalJaune {
+    width: fit-content;
+    border: 1px solid yellow;
+    border-radius: 100%;
+    padding: 1px;
+}
+.ligne_arrive{
+    position: absolute;
+    left: 1000px;
+    width: 2px;
+    height: 100px;
+    background-color: black;
+    top: 0;
+}
