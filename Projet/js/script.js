@@ -46,10 +46,13 @@ setInterval(function() {
     statscontainer[0].style.width = `${stats[0]}%`;
 },10000)
 
-setInterval(function() {
+//Condition de fin de partie
+let intervalID;
+intervalID = setInterval(function() {
     if (stats[0]==0||stats[1]==0||stats[2]==0){
         document.querySelector(".end").style.display = "flex";
         document.querySelector(".score").innerHTML = time;
+        clearInterval(intervalID);
     }
 
 
