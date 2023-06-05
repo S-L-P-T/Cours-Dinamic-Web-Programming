@@ -51,7 +51,7 @@ let intervalID;
 intervalID = setInterval(function() {
     if (stats[0]==0||stats[1]==0||stats[2]==0){
         document.querySelector(".end").style.display = "flex";
-        document.querySelector(".score").innerHTML = time;
+        document.querySelector(".score").innerHTML = time*=1+denomb[3]+denomb[4]+denomb[5];
         clearInterval(intervalID);
     }
 

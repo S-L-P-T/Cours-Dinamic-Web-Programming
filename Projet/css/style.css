@@ -123,12 +123,12 @@ table {
 }
 
 table .tab1color {
-    background-color: darkblue;
+    background-color: #88001b;
     color: white;
 }
 
 table .tab2color {
-    background-color: white;
+    background-color: rgb(255, 213, 123);
 }
 
 table tr td {
@@ -141,6 +141,10 @@ table tr .tab1row {
 
 table tr .tab2row {
     border-right: 1px black solid;
+}
+
+table tr #tab2rowlast {
+    border-right: 0;
 }
 
 table tr td {
