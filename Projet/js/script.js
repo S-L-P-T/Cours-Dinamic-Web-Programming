@@ -57,6 +57,31 @@ intervalID = setInterval(function() {
 
 
 
+    if (denomb[2] != 0) {
+        document.querySelector("#manger").style.display = "block";
+    } else {
+        document.querySelector("#manger").style.display = "none";
+    }
+
+    if (denomb[0] != 0) {
+        document.querySelector("#boire").style.display = "block";
+    } else {
+        document.querySelector("#boire").style.display = "none";
+    }
+
+    if (denomb[1] != 0) {
+        document.querySelector("#respirer").style.display = "block";
+    } else {
+        document.querySelector("#respirer").style.display = "none";
+    }
+
+    let capsule = ['capsule'];
+    if (comparerTableauxCapsule(capsule,materiauxcollectible) == false) {
+
+    } else {
+        document.querySelector('#capsule').style.display = "block"
+    }
+
 
     let eau = ['ice'];
     let eau1 = document.getElementById('0');
