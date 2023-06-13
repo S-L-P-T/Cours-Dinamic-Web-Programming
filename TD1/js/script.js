@@ -19,7 +19,6 @@
 // });
 
 
-
 var chevalRouge = document.querySelector('.chevalRouge');
 var chevalVert = document.querySelector('.chevalVert');
 var chevalJaune = document.querySelector('.chevalJaune');
