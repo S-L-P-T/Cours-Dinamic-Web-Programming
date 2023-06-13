@@ -7,15 +7,10 @@ var statscontainer = document.querySelectorAll('.stats');
 var deplacer = document.querySelector('#deplacer');
 var mineraiscontainer = document.querySelectorAll('.minerais');
 var tasks = document.querySelectorAll('.btntask');
-<<<<<<< HEAD
-var contenu = document.querySelectorAll('.tab2row');
-var infocraft = document.querySelector('.infocraft');
-=======
 var contenuconstr = document.querySelectorAll('.tab1 .row2color .row .number');
 var contenuinventaire = document.querySelectorAll('.tab2 .row2color .row .number');
 
 console.log(contenuinventaire,contenuconstr);
->>>>>>> 723930c347ff2815140c990d0b15e0e17d733bf9
 
 //Déclaration des minerais
 var ice = "../img/minerais/ice.webp";
