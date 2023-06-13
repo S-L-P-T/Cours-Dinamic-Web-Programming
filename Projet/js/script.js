@@ -8,6 +8,7 @@ var deplacer = document.querySelector('#deplacer');
 var mineraiscontainer = document.querySelectorAll('.minerais');
 var tasks = document.querySelectorAll('.btntask');
 var contenu = document.querySelectorAll('.tab2row');
+var infocraft = document.querySelector('.infocraft');
 
 //Déclaration des minerais
 var ice = "../img/minerais/ice.webp";
@@ -472,3 +473,41 @@ tasks.forEach( input => input.addEventListener('click', e => {
 }));
 
 
+tasks.forEach( input => input.addEventListener('mouseover', e => {
+    let id = (e.target.id);
+    if (id == 0) {
+        let tasksmateriaux = ['ice'];
+        infocraft.style.display = "block";
+        infocraft.innerHTML = tasksmateriaux;
+    }
+    if (id == 1) {
+        let tasksmateriaux = ['cobalt','cobalt'];
+        infocraft.style.display = "block";
+        infocraft.innerHTML = tasksmateriaux;
+    }
+    if (id == 2) {
+        let tasksmateriaux = ['iron','iron','titanium'];
+        infocraft.style.display = "block";
+        infocraft.innerHTML = tasksmateriaux;
+    }
+    if (id == 3) {
+        let tasksmateriaux = ['silicon','magnesium','magnesium'];
+        infocraft.style.display = "block";
+        infocraft.innerHTML = tasksmateriaux;
+    }
+    if (id == 4) {
+        let tasksmateriaux = ['iron','titanium'];
+        infocraft.style.display = "block";
+        infocraft.innerHTML = tasksmateriaux;
+    }
+    if (id == 5) {
+        let tasksmateriaux = ['iron','silicon'];
+        infocraft.style.display = "block";
+        infocraft.innerHTML = tasksmateriaux;
+    }
+    if (id == 6) {
+        let tasksmateriaux = ['iron','ice','seed'];
+        infocraft.style.display = "block";
+        infocraft.innerHTML = tasksmateriaux;
+    }
+}));
