@@ -132,34 +132,52 @@ table {
     margin-top: 20px;
 }
 
-table .tab1color {
+table tr td {
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+}
+
+.tab1 .row1color {
     background-color: #88001b;
     color: white;
 }
 
-table .tab2color {
+.tab1 .row2color {
     background-color: rgb(255, 213, 123);
 }
 
-table tr td {
-    padding: 5px;
-}
-
-table tr .tab1row {
+.tab1 .row1color .row {
     border-right: 1px white solid;
 }
 
-table tr .tab2row {
+.tab1 .row2color .row {
     border-right: 1px black solid;
 }
 
-table tr #tab2rowlast {
+table tr #row2last {
     border-right: 0;
 }
 
-table tr td {
-    width: 100px;
-    text-align: center;
+.tab2 .row1color {
+    background-color: #88001b;
+    color: white;
+}
+
+.tab2 .row2color {
+    background-color: rgb(255, 213, 123);
+}
+
+.tab2 .row1color .row {
+    border-right: 1px white solid;
+}
+
+.tab2 .row2color .row {
+    border-right: 1px black solid;
+}
+
+table tr #row2last {
+    border-right: 0;
 }
 
 section {
