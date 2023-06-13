@@ -7,7 +7,10 @@ var statscontainer = document.querySelectorAll('.stats');
 var deplacer = document.querySelector('#deplacer');
 var mineraiscontainer = document.querySelectorAll('.minerais');
 var tasks = document.querySelectorAll('.btntask');
-var contenu = document.querySelectorAll('.tab2row');
+var contenuconstr = document.querySelectorAll('.tab1 .row2color .row .number');
+var contenuinventaire = document.querySelectorAll('.tab2 .row2color .row .number');
+
+console.log(contenuinventaire,contenuconstr);
 
 //Déclaration des minerais
 var ice = "../img/minerais/ice.webp";
@@ -16,11 +19,12 @@ var iron = "../img/minerais/iron.webp";
 var magnesium = "../img/minerais/magnesium.webp";
 var silicon = "../img/minerais/silicon.webp";
 var titanium = "../img/minerais/titanium.webp";
-var food = "../img/minerais/space_food.webp"
-var seed = "../img/minerais/seed_lirma.webp"
+var food = "../img/minerais/space_food.webp";
+var seed = "../img/minerais/seed_lirma.webp";
 
 //Déclaration des tableaux
-var denomb = [0,0,0,0,0,0];
+var denombconstr = [0,0,0,0,0,0];
+var denombinventaire = [0,0,0,0,0,0,0];
 var time = 0;
 var stats = [100,100,100];
 var minerai = ['ice', 'cobalt', 'iron', 'magnesium', 'silicon', 'titanium'];
@@ -51,25 +55,25 @@ let intervalID;
 intervalID = setInterval(function() {
     if (stats[0]==0||stats[1]==0||stats[2]==0){
         document.querySelector(".end").style.display = "flex";
-        document.querySelector(".score").innerHTML = time*=1+denomb[3]+denomb[4]+denomb[5];
+        document.querySelector(".score").innerHTML = time*=1+denombconstr[3]+denombconstr[4]+denombconstr[5];
         clearInterval(intervalID);
     }
 
 
 
-    if (denomb[2] != 0) {
+    if (denombconstr[2] != 0) {
         document.querySelector("#manger").style.display = "block";
     } else {
         document.querySelector("#manger").style.display = "none";
     }
 
-    if (denomb[0] != 0) {
+    if (denombconstr[0] != 0) {
         document.querySelector("#boire").style.display = "block";
     } else {
         document.querySelector("#boire").style.display = "none";
     }
 
-    if (denomb[1] != 0) {
+    if (denombconstr[1] != 0) {
         document.querySelector("#respirer").style.display = "block";
     } else {
         document.querySelector("#respirer").style.display = "none";
@@ -83,9 +87,8 @@ intervalID = setInterval(function() {
     }
 
 
-    let eau = ['ice'];
     let eau1 = document.getElementById('0');
-    if (comparerTableauxCapsule(eau,materiaux) == false) {
+    if (contenuinventaire[0]>=1) {
         eau1.style.color = "white";
         eau1.style.background = "rgba(0, 0, 0, 0.60)";
         eau1.style.border = "1px white solid";
@@ -99,10 +102,9 @@ intervalID = setInterval(function() {
         eau1.querySelector('.star').style.filter = 'invert(0)';
     }
 
-
-    let o2 = ['cobalt','cobalt'];
+    console.log(contenuinventaire)
     let o21 = document.getElementById('1');
-    if (comparerTableauxCapsule(o2,materiaux) == false) {
+    if (contenuinventaire[1]>=2) {
         o21.style.color = "white";
         o21.style.background = "rgba(0, 0, 0, 0.60)";
         o21.style.border = "1px white solid";
@@ -214,48 +216,109 @@ intervalID = setInterval(function() {
     if (comparerTableaux(['eau'],materiauxcollectible) == false) {
 
     } else {
-        denomb[0]++
-        contenu[0].innerHTML = denomb[0];
+        denombconstr[0]++
+        contenuconstr[0].innerHTML = denombconstr[0];
     }
 
 
     if (comparerTableaux(['oxygen'],materiauxcollectible) == false) {
 
     } else {
-        denomb[1]++
-        contenu[1].innerHTML = denomb[1];
+        denombconstr[1]++
+        contenuconstr[1].innerHTML = denombconstr[1];
     }
 
 
     if (comparerTableaux(['food'],materiaux) == false) {
 
     } else {
-        denomb[2]++
-        contenu[2].innerHTML = denomb[2];
+        denombconstr[2]++
+        contenuconstr[2].innerHTML = denombconstr[2];
     }
 
 
     if (comparerTableaux(['foreuse'],materiauxcollectible) == false) {
 
     } else {
-        denomb[3]++
-        contenu[3].innerHTML = denomb[3];
+        denombconstr[3]++
+        contenuconstr[3].innerHTML = denombconstr[3];
     }
 
 
     if (comparerTableaux(['radiateur'],materiauxcollectible) == false) {
 
     } else {
-        denomb[4]++
-        contenu[4].innerHTML = denomb[4];
+        denombconstr[4]++
+        contenuconstr[4].innerHTML = denombconstr[4];
     }
 
 
     if (comparerTableaux(['plantation'],materiauxcollectible) == false) {
 
     } else {
-        denomb[5]++
-        contenu[5].innerHTML = denomb[5];
+        denombconstr[5]++
+        contenuconstr[5].innerHTML = denombconstr[5];
+    }
+
+
+
+
+
+
+
+    if (comparerTableaux(['ice'],materiaux) == false) {
+
+    } else {
+        denombinventaire[0]++
+        contenuinventaire[0].innerHTML = denombinventaire[0];
+    }
+
+
+    if (comparerTableaux(['cobalt'],materiaux) == false) {
+
+    } else {
+        denombinventaire[1]++
+        contenuinventaire[1].innerHTML = denombinventaire[1];
+    }
+
+
+    if (comparerTableaux(['iron'],materiaux) == false) {
+
+    } else {
+        denombinventaire[2]++
+        contenuinventaire[2].innerHTML = denombinventaire[2];
+    }
+
+
+    if (comparerTableaux(['magnesium'],materiaux) == false) {
+
+    } else {
+        denombinventaire[3]++
+        contenuinventaire[3].innerHTML = denombinventaire[3];
+    }
+
+
+    if (comparerTableaux(['silicon'],materiaux) == false) {
+
+    } else {
+        denombinventaire[4]++
+        contenuinventaire[4].innerHTML = denombinventaire[4];
+    }
+
+
+    if (comparerTableaux(['titanium'],materiaux) == false) {
+
+    } else {
+        denombinventaire[5]++
+        contenuinventaire[5].innerHTML = denombinventaire[5];
+    }
+
+
+    if (comparerTableaux(['seed'],materiaux) == false) {
+
+    } else {
+        denombinventaire[6]++
+        contenuinventaire[6].innerHTML = denombinventaire[6];
     }
 },100)
 
@@ -320,9 +383,9 @@ function comparerTableauxCapsule(tableau1, tableau2) {
 }
 
 document.querySelector('#manger').addEventListener("click", () => {
-    if(denomb[2]!=0){
-        denomb[2]--
-        contenu[2].innerHTML = denomb[2];
+    if(denombconstr[2]!=0){
+        denombconstr[2]--
+        contenuconstr[2].innerHTML = denombconstr[2];
         stats[0] = 100;
         statscontainer[0].style.width = `${stats[0]}%`;
     } else {
@@ -331,9 +394,9 @@ document.querySelector('#manger').addEventListener("click", () => {
 });
 
 document.querySelector('#respirer').addEventListener("click", () => {
-    if(denomb[1]!=0){
-        denomb[1]--
-        contenu[1].innerHTML = denomb[1];
+    if(denombconstr[1]!=0){
+        denombconstr[1]--
+        contenuconstr[1].innerHTML = denombconstr[1];
         stats[2] = 100;
         statscontainer[2].style.width = `${stats[2]}%`;
     } else {
@@ -342,9 +405,9 @@ document.querySelector('#respirer').addEventListener("click", () => {
 });
 
 document.querySelector('#boire').addEventListener("click", () => {
-    if(denomb[0]!=0){
-        denomb[0]--
-        contenu[0].innerHTML = denomb[0];
+    if(denombconstr[0]!=0){
+        denombconstr[0]--
+        contenuconstr[0].innerHTML = denombconstr[0];
         stats[1] = 100;
         statscontainer[1].style.width = `${stats[1]}%`;
     } else {
@@ -403,8 +466,7 @@ function comparerTableaux(tableau1, tableau2) {
 tasks.forEach( input => input.addEventListener('click', e => {
     let id = (e.target.id);
     if (id == 0) {
-        let tasksmateriaux = ['ice'];
-        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+        if (contenuinventaire[0]>=1) {
 
         } else {
             materiauxcollectible.push('eau');
@@ -412,8 +474,7 @@ tasks.forEach( input => input.addEventListener('click', e => {
         }
     }
     if (id == 1) {
-        let tasksmateriaux = ['cobalt','cobalt'];
-        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+        if (contenuinventaire[1]>=2) {
 
         } else {
             materiauxcollectible.push('oxygen');
@@ -421,8 +482,7 @@ tasks.forEach( input => input.addEventListener('click', e => {
         }
     }
     if (id == 2) {
-        let tasksmateriaux = ['iron','iron','titanium'];
-        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+        if (contenuinventaire[2]>=2&&contenuinventaire[5]>=1) {
 
         } else {
             materiauxcollectible.push('capsule');
@@ -431,8 +491,7 @@ tasks.forEach( input => input.addEventListener('click', e => {
         }
     }
     if (id == 3) {
-        let tasksmateriaux = ['silicon','magnesium','magnesium'];
-        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+        if (contenuinventaire[4]>=1&&contenuinventaire[3]>=2) {
 
         } else {
             materiauxcollectible.push('lampe');
@@ -443,8 +502,7 @@ tasks.forEach( input => input.addEventListener('click', e => {
         }
     }
     if (id == 4) {
-        let tasksmateriaux = ['iron','titanium'];
-        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+        if (contenuinventaire[2]>=1&&contenuinventaire[5]>=1) {
 
         } else {
             materiauxcollectible.push('foreuse');
@@ -452,8 +510,7 @@ tasks.forEach( input => input.addEventListener('click', e => {
         }
     }
     if (id == 5) {
-        let tasksmateriaux = ['iron','silicon'];
-        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+        if (contenuinventaire[2]>=1&&contenuinventaire[4]>=1) {
 
         } else {
             materiauxcollectible.push('radiateur');
@@ -461,8 +518,7 @@ tasks.forEach( input => input.addEventListener('click', e => {
         }
     }
     if (id == 6) {
-        let tasksmateriaux = ['iron','ice','seed'];
-        if (comparerTableaux(tasksmateriaux,materiaux) == false) {
+        if (contenuinventaire[2]>=1&&contenuinventaire[0]>=1&&contenuinventaire[6]>=1) {
 
         } else {
             materiauxcollectible.push('plantation');
