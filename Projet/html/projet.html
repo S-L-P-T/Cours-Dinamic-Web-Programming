@@ -65,7 +65,7 @@
                     <div class="infoCraft"></div>
                 </div>
                 <div class="button">
-                    <button id="deplacer">Bouton se déplacer</button>
+                    <img class="Fleche" src="../img/interface/Fleche G.png">
                 </div>
                 <div class="infodroit">
                     <div class="infobulleTi">
@@ -181,14 +181,14 @@
         <section>
             <div class="bigbox">
                 <div class="boxconteneur">
-                    <div class="minerais"></div>
-                    <div class="minerais"></div>
-                    <div class="minerais"></div>
+                    <div class="minerais" id="m1"></div>
+                    <div class="minerais" id="m2"></div>
+                    <div class="minerais" id="m3"></div>
                 </div>
                 <div class="boxconteneur">
-                    <div class="minerais"></div>
-                    <div class="minerais"></div>
-                    <div class="minerais"></div>
+                    <div class="minerais" id="m4"></div>
+                    <div class="minerais" id="m5"></div>
+                    <div class="minerais" id="m6"></div>
                 </div>
             </div>
         </section>
@@ -197,17 +197,37 @@
             <h1>Tu as perdu ton score est de : <span class="score"></span></h1>
         </div>
 
+        <div class="goodend" style="display: none;">
+            <h1>Vous avez réussi a terraformer la planette, <br> Votre score est de <span class="score2"></span> points</h1>
+        </div>
+
+
+        <audio loop>
+            <source src="../sound/Secret Light.mp3" type="audio/mpeg">
+        </audio>
+        <h1 id="audio"><img src="../img/interface/mute.png" alt=""></h1>
+
         <div class="etatInventaire">
             <h1>⚠️Ton inventaire est plein</h1>
+        </div>
+
+        <div>
+            <img id="capsule" style="display: none;" src="../img/machines/capsule.png" alt="">
+        </div>
+
+        <div>
+            <img id="light" style="display: none;" src="../img/machines/pngimg.com - flashlight_PNG11095.png" alt="">
         </div>
 
         <footer>
             <div>
                 <div>
-                    <button id="manger" style="display: none;">Manger</button>
-                    <button id="boire" style="display: none;">Boire l'eau</button>
-                    <button id="respirer" style="display: none;">Prendre de l'oxygène</button>
-                    <button id="capsule" style="display: none;">Bouton passer à la base pour reprendre de l'oxygène. Apparait si hab. de survie construit</button>
+                    <button id="manger" style="display: none; position: absolute; right: 10px; bottom: 10px;">Manger</button>
+                    <button id="boire" style="display: none; position: absolute; right: 10px; bottom: 40px">Boire l'eau</button>
+                    <button id="respirer" style="display: none; position: absolute; right: 10px; bottom: 70px">Prendre de l'oxygène</button>
+                    <div>
+                        <img id="capsule" style="display: none;" src="../img/machines/capsule.png" alt="">
+                    </div>
                 </div>
                 <div class="viecontainer">
                     <img src="../img/interface/like.png" alt="coeur">

@@ -4,7 +4,7 @@ var eau = document.querySelector('#eau');
 var o2 = document.querySelector('#o2');
 var timecontainer = document.querySelector('.time');
 var statscontainer = document.querySelectorAll('.stats');
-var deplacer = document.querySelector('#deplacer');
+var deplacer = document.querySelector('.Fleche');
 var mineraiscontainer = document.querySelectorAll('.minerais');
 var tasks = document.querySelectorAll('.btntask');
 var contenuconstr = document.querySelectorAll('.tab1 .row2color .row');
@@ -13,14 +13,14 @@ var contenuinventaire = document.querySelectorAll('.tab2 .row2color .row');
 console.log(contenuinventaire,contenuconstr);
 
 //Déclaration des minerais
-var ice = "../img/minerais/ice.webp";
-var cobalt = "../img/minerais/cobalt.webp";
-var iron = "../img/minerais/iron.webp";
-var magnesium = "../img/minerais/magnesium.webp";
-var silicon = "../img/minerais/silicon.webp";
-var titanium = "../img/minerais/titanium.webp";
-var food = "../img/minerais/space_food.webp";
-var seed = "../img/minerais/seed_lirma.webp";
+var ice = "../img/minerais/ice.png";
+var cobalt = "../img/minerais/cobalt.png";
+var iron = "../img/minerais/iron.png";
+var magnesium = "../img/minerais/magnesium.png";
+var silicon = "../img/minerais/silicon.png";
+var titanium = "../img/minerais/titanium.png";
+var food = "../img/minerais/space_food.png";
+var seed = "../img/minerais/seed_lirma.png";
 
 //Déclaration des tableaux
 var denombconstr = [0,0,0,0,0,0];
@@ -59,6 +59,12 @@ intervalID = setInterval(function() {
         clearInterval(intervalID);
     }
 
+    if (time==10000){
+        document.querySelector('.goodend').style.display = 'flex';
+        document.querySelector(".score2").innerHTML = time*=1+denombconstr[3]+denombconstr[4]+denombconstr[5];
+        clearInterval(intervalID);
+    }
+
 
 
     if (denombconstr[2] != 0) {
@@ -83,7 +89,7 @@ intervalID = setInterval(function() {
     if (comparerTableauxCapsule(capsule,materiauxcollectible) == false) {
 
     } else {
-        document.querySelector('#capsule').style.display = "block"
+        document.querySelector('#capsule').style.display = "flex"
     }
 
 
@@ -202,9 +208,7 @@ intervalID = setInterval(function() {
     if (comparerTableaux(['lampe'],materiauxcollectible) == false) {
 
     } else {
-        let food = document.querySelectorAll('td[style]');
-        food[0].style.display = 'block';
-        food[1].style.display = 'block';
+        document.querySelector('#light').style.display = "flex"
     }
 
 
@@ -284,7 +288,7 @@ for (let i = 0; i <= mineraiscontainer.length-1; i++) {
     let img = document.createElement("img");
     img.src = mineraisAleatoire;
     img.className = i;
-    img.width = "50";
+    img.width = "65";
     mineraiscontainer[i].appendChild(img);
 }
 
@@ -314,7 +318,7 @@ deplacer.addEventListener("click", () => {
         let mineraisAleatoire = minerais[Math.floor(Math.random() * minerais.length)];
         let img = mineraiscontainer[i].querySelector("img");
         img.src = mineraisAleatoire;
-        img.width = "50";
+        img.width = "65";
     }
 });
 
@@ -573,3 +577,21 @@ document.querySelector('.tab2').addEventListener("mouseover", () => {
 document.querySelector('.tab2').addEventListener("mouseout", () => {
     document.querySelector('.infoInventaire').style.display = "none";
 });
+
+var player = document.querySelector('audio');
+var audio = document.querySelector('#audio');
+var show = false;
+
+audio.onclick = function() {
+    if (show == true){
+        player.pause();
+        show = false;
+        let img = document.querySelector("#audio img");
+        img.src = '../img/interface/mute.png';
+    } else {
+        player.play();
+        show = true;
+        let img = document.querySelector("#audio img");
+        img.src = '../img/interface/speaker-filled-audio-tool.png';
+    }
+}
