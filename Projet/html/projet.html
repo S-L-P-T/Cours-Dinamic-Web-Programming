@@ -62,16 +62,17 @@
                             FABRIQUER: PLANTATION
                         </button>
                     </div>
-                    <div class="infocraft"></div>
+                    <div class="infoCraft"></div>
                 </div>
                 <div class="button">
                     <button id="deplacer">Bouton se déplacer</button>
                 </div>
                 <div class="infodroit">
-                    <div>
+                    <div class="infobulleTi">
                         <div class="idterra">
                             <p>Indice de terraformation</p>
                             <p><span class="time">0</span> Ti</p>
+                            <div class="infobulleTiTexte">Ti = temps * (Foreuse + Radiateur + Plantation)</div>
                         </div>
                         <div>
                             <img src="../img/interface/worldwide.png">
@@ -114,7 +115,7 @@
                             <td class="row">
                                 <p>0</p>
                             </td>
-                            <td id="row2last" class="row">
+                            <td id="rowlast" class="row">
                                 <p>0</p>
                             </td>
                         </tr>
@@ -158,16 +159,21 @@
                                 <p>0</p>
                             </td>
                             <td class="row">
-                                <p><span>0</span></p>
+                                <p>0</p>
                             </td>
                             <td class="row">
                                 <p>0</p>
                             </td>
-                            <td id="row2last" class="row">
+                            <td id="rowlast" class="row">
                                 <p>0</p>
                             </td>
                         </tr>
                     </table>
+
+                    <div class="infoInventaire" style="display: none;">
+                        <h1>L'inventaire a une capacité de 20 matériaux</h1>
+                    </div>
+
                 </div>
             </div>
         </header>
@@ -189,6 +195,10 @@
 
         <div class="end" style="display: none;">
             <h1>Tu as perdu ton score est de : <span class="score"></span></h1>
+        </div>
+
+        <div class="etatInventaire">
+            <h1>⚠️Ton inventaire est plein</h1>
         </div>
 
         <footer>

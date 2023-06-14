@@ -26,7 +26,7 @@ header {
 }
 
 .htop {
-    height: fit-content;
+    height: 250px;
     display: flex;
     justify-content: space-between;
 }
@@ -127,6 +127,79 @@ header {
     margin-right: 10px;
 }
 
+.infobulleTi {
+    position: relative;
+    display: inline-block;
+}
+
+
+.infobulleTi .infobulleTiTexte {
+    visibility: hidden;
+    width: 200px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    right: 225px; /* Changer la valeur pour ajuster la position */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.infobulleTi:hover .infobulleTiTexte {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.infoCraft {
+    display: none;
+    width: 385px;
+    background-color: #000;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding: 5px;
+    top: 290px;
+    left: 3%;
+    z-index: 1;
+}
+
+.etatInventaire {
+    display: none;
+    font-size: small;
+    width: 400px;
+    background-color: #000;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding: 5px;
+    top: 250px;
+    right: 3%;
+    position: absolute;
+    z-index: 1;
+}
+
+.infoInventaire {
+    display: none;
+    font-size: 0.7em;
+    width: fit-content;
+    background-color: #000;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding: 5px;
+    top: 250px;
+    right: 3%;
+    position: absolute;
+    z-index: 2;
+}
+
 table {
     border-collapse: collapse;
     margin-top: 20px;
@@ -155,7 +228,7 @@ table tr td {
     border-right: 1px black solid;
 }
 
-table tr #row2last {
+table tr #rowlast {
     border-right: 0;
 }
 

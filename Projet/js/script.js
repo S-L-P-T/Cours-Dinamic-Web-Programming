@@ -7,8 +7,8 @@ var statscontainer = document.querySelectorAll('.stats');
 var deplacer = document.querySelector('#deplacer');
 var mineraiscontainer = document.querySelectorAll('.minerais');
 var tasks = document.querySelectorAll('.btntask');
-var contenuconstr = document.querySelectorAll('.tab1 .row2color .row .number');
-var contenuinventaire = document.querySelectorAll('.tab2 .row2color .row .number');
+var contenuconstr = document.querySelectorAll('.tab1 .row2color .row');
+var contenuinventaire = document.querySelectorAll('.tab2 .row2color .row');
 
 console.log(contenuinventaire,contenuconstr);
 
@@ -88,119 +88,114 @@ intervalID = setInterval(function() {
 
 
     let eau1 = document.getElementById('0');
-    if (contenuinventaire[0]>=1) {
-        eau1.style.color = "white";
-        eau1.style.background = "rgba(0, 0, 0, 0.60)";
-        eau1.style.border = "1px white solid";
-        eau1.style.boxShadow = "inset 0px 0px 5px 1px white";
-        eau1.querySelector('.star').style.filter = 'invert(1)';
-    } else {
+    if (denombinventaire[0]>=1) {
         eau1.style.color = "black";
         eau1.style.background = "white";
         eau1.style.border = "1px black solid";
         eau1.style.boxShadow = "inset 0px 0px 5px 1px black";
         eau1.querySelector('.star').style.filter = 'invert(0)';
+    } else {
+        eau1.style.color = "white";
+        eau1.style.background = "rgba(0, 0, 0, 0.60)";
+        eau1.style.border = "1px white solid";
+        eau1.style.boxShadow = "inset 0px 0px 5px 1px white";
+        eau1.querySelector('.star').style.filter = 'invert(1)';
     }
 
-    console.log(contenuinventaire)
+    console.log(denombinventaire)
     let o21 = document.getElementById('1');
-    if (contenuinventaire[1]>=2) {
-        o21.style.color = "white";
-        o21.style.background = "rgba(0, 0, 0, 0.60)";
-        o21.style.border = "1px white solid";
-        o21.style.boxShadow = "inset 0px 0px 5px 1px white";
-        o21.querySelector('.star').style.filter = 'invert(1)';
-    } else {
+    if (denombinventaire[1]>=2) {
         o21.style.color = "black";
         o21.style.background = "white";
         o21.style.border = "1px black solid";
         o21.style.boxShadow = "inset 0px 0px 5px 1px black";
         o21.querySelector('.star').style.filter = 'invert(0)';
+    } else {
+        o21.style.color = "white";
+        o21.style.background = "rgba(0, 0, 0, 0.60)";
+        o21.style.border = "1px white solid";
+        o21.style.boxShadow = "inset 0px 0px 5px 1px white";
+        o21.querySelector('.star').style.filter = 'invert(1)';
     }
 
 
-    let habitacle = ['iron','iron','titanium'];
     let habitacle1 = document.getElementById('2');
-    if (comparerTableauxCapsule(habitacle,materiaux) == false) {
-        habitacle1.style.color = "white";
-        habitacle1.style.background = "rgba(0, 0, 0, 0.60)";
-        habitacle1.style.border = "1px white solid";
-        habitacle1.style.boxShadow = "inset 0px 0px 5px 1px white";
-        habitacle1.querySelector('.star').style.filter = 'invert(1)';
-    } else {
+    if (denombinventaire[2]>=2&&denombinventaire[5]>=1) {
         habitacle1.style.color = "black";
         habitacle1.style.background = "white";
         habitacle1.style.border = "1px black solid";
         habitacle1.style.boxShadow = "inset 0px 0px 5px 1px black";
         habitacle1.querySelector('.star').style.filter = 'invert(0)';
+    } else {
+        habitacle1.style.color = "white";
+        habitacle1.style.background = "rgba(0, 0, 0, 0.60)";
+        habitacle1.style.border = "1px white solid";
+        habitacle1.style.boxShadow = "inset 0px 0px 5px 1px white";
+        habitacle1.querySelector('.star').style.filter = 'invert(1)';
     }
 
 
-    let lampe = ['silicon','magnesium','magnesium'];
     let lampe1 = document.getElementById('3');
-    if (comparerTableauxCapsule(lampe,materiaux) == false) {
-        lampe1.style.color = "white";
-        lampe1.style.background = "rgba(0, 0, 0, 0.60)";
-        lampe1.style.border = "1px white solid";
-        lampe1.style.boxShadow = "inset 0px 0px 5px 1px whitelampe1";
-        lampe1.querySelector('.star').style.filter = 'invert(1)';
-    } else {
+    if (denombinventaire[4]>=1&&denombinventaire[3]>=2) {
         lampe1.style.color = "black";
         lampe1.style.background = "white";
         lampe1.style.border = "1px black solid";
         lampe1.style.boxShadow = "inset 0px 0px 5px 1px black";
         lampe1.querySelector('.star').style.filter = 'invert(0)';
+    } else {
+        lampe1.style.color = "white";
+        lampe1.style.background = "rgba(0, 0, 0, 0.60)";
+        lampe1.style.border = "1px white solid";
+        lampe1.style.boxShadow = "inset 0px 0px 5px 1px whitelampe1";
+        lampe1.querySelector('.star').style.filter = 'invert(1)';
     }
 
 
-    let foreuse = ['iron','titanium'];
     let foreuse1 = document.getElementById('4');
-    if (comparerTableauxCapsule(foreuse,materiaux) == false) {
-        foreuse1.style.color = "white";
-        foreuse1.style.background = "rgba(0, 0, 0, 0.60)";
-        foreuse1.style.border = "1px white solid";
-        foreuse1.style.boxShadow = "inset 0px 0px 5px 1px white";
-        foreuse1.querySelector('.star').style.filter = 'invert(1)';
-    } else {
+    if (denombinventaire[2]>=1&&denombinventaire[5]>=1) {
         foreuse1.style.color = "black";
         foreuse1.style.background = "white";
         foreuse1.style.border = "1px black solid";
         foreuse1.style.boxShadow = "inset 0px 0px 5px 1px black";
         foreuse1.querySelector('.star').style.filter = 'invert(0)';
+    } else {
+        foreuse1.style.color = "white";
+        foreuse1.style.background = "rgba(0, 0, 0, 0.60)";
+        foreuse1.style.border = "1px white solid";
+        foreuse1.style.boxShadow = "inset 0px 0px 5px 1px white";
+        foreuse1.querySelector('.star').style.filter = 'invert(1)';
     }
 
 
-    let radiateur = ['iron','silicon'];
     let radiateur1 = document.getElementById('5');
-    if (comparerTableauxCapsule(radiateur,materiaux) == false) {
-        radiateur1.style.color = "white";
-        radiateur1.style.background = "rgba(0, 0, 0, 0.60)";
-        radiateur1.style.border = "1px white solid";
-        radiateur1.style.boxShadow = "inset 0px 0px 5px 1px white";
-        radiateur1.querySelector('.star').style.filter = 'invert(1)';
-    } else {
+    if (denombinventaire[2]>=1&&denombinventaire[4]>=1) {
         radiateur1.style.color = "black";
         radiateur1.style.background = "white";
         radiateur1.style.border = "1px black solid";
         radiateur1.style.boxShadow = "inset 0px 0px 5px 1px black";
         radiateur1.querySelector('.star').style.filter = 'invert(0)';
+    } else {
+        radiateur1.style.color = "white";
+        radiateur1.style.background = "rgba(0, 0, 0, 0.60)";
+        radiateur1.style.border = "1px white solid";
+        radiateur1.style.boxShadow = "inset 0px 0px 5px 1px white";
+        radiateur1.querySelector('.star').style.filter = 'invert(1)';
     }
 
 
-    let plantation = ['iron','ice','seed'];
     let plantation1 = document.getElementById('6');
-    if (comparerTableauxCapsule(plantation,materiaux) == false) {
-        plantation1.style.color = "white";
-        plantation1.style.background = "rgba(0, 0, 0, 0.60)";
-        plantation1.style.border = "1px white solid";
-        plantation1.style.boxShadow = "inset 0px 0px 5px 1px white";
-        plantation1.querySelector('.star').style.filter = 'invert(1)';
-    } else {
+    if (denombinventaire[2]>=1&&denombinventaire[0]>=1&&denombinventaire[6]>=1) {
         plantation1.style.color = "black";
         plantation1.style.background = "white";
         plantation1.style.border = "1px black solid";
         plantation1.style.boxShadow = "inset 0px 0px 5px 1px black";
         plantation1.querySelector('.star').style.filter = 'invert(0)';
+    } else {
+        plantation1.style.color = "white";
+        plantation1.style.background = "rgba(0, 0, 0, 0.60)";
+        plantation1.style.border = "1px white solid";
+        plantation1.style.boxShadow = "inset 0px 0px 5px 1px white";
+        plantation1.querySelector('.star').style.filter = 'invert(1)';
     }
 
 
@@ -213,19 +208,10 @@ intervalID = setInterval(function() {
     }
 
 
-    if (comparerTableaux(['eau'],materiauxcollectible) == false) {
-
+    if((denombinventaire[0]+denombinventaire[1]+denombinventaire[2]+denombinventaire[3]+denombinventaire[4]+denombinventaire[5]+denombinventaire[6])===20){
+        document.querySelector('.etatInventaire').style.display = "flex";
     } else {
-        denombconstr[0]++
-        contenuconstr[0].innerHTML = denombconstr[0];
-    }
-
-
-    if (comparerTableaux(['oxygen'],materiauxcollectible) == false) {
-
-    } else {
-        denombconstr[1]++
-        contenuconstr[1].innerHTML = denombconstr[1];
+        document.querySelector('.etatInventaire').style.display = "none";
     }
 
 
@@ -235,35 +221,6 @@ intervalID = setInterval(function() {
         denombconstr[2]++
         contenuconstr[2].innerHTML = denombconstr[2];
     }
-
-
-    if (comparerTableaux(['foreuse'],materiauxcollectible) == false) {
-
-    } else {
-        denombconstr[3]++
-        contenuconstr[3].innerHTML = denombconstr[3];
-    }
-
-
-    if (comparerTableaux(['radiateur'],materiauxcollectible) == false) {
-
-    } else {
-        denombconstr[4]++
-        contenuconstr[4].innerHTML = denombconstr[4];
-    }
-
-
-    if (comparerTableaux(['plantation'],materiauxcollectible) == false) {
-
-    } else {
-        denombconstr[5]++
-        contenuconstr[5].innerHTML = denombconstr[5];
-    }
-
-
-
-
-
 
 
     if (comparerTableaux(['ice'],materiaux) == false) {
@@ -440,10 +397,14 @@ mineraiscontainer.forEach( input => input.addEventListener('click', e => {
         if (src == undefined) {
 
         } else {
+            if((denombinventaire[0]+denombinventaire[1]+denombinventaire[2]+denombinventaire[3]+denombinventaire[4]+denombinventaire[5]+denombinventaire[6])===20){
+                
+            } else {
             materiaux.push(rechercheElement(src,minerai));
             let cn = e.target.className;
             let img = mineraiscontainer[cn].querySelector("img");
             img.src = '';
+            }
         }
     })
 );
@@ -466,103 +427,149 @@ function comparerTableaux(tableau1, tableau2) {
 tasks.forEach( input => input.addEventListener('click', e => {
     let id = (e.target.id);
     if (id == 0) {
-        if (contenuinventaire[0]>=1) {
-
-        } else {
-            materiauxcollectible.push('eau');
+        if (denombinventaire[0]>=1) {
+            denombconstr[0]++
+            contenuconstr[0].innerHTML = denombconstr[0];
+            denombinventaire[0]--
+            contenuinventaire[0].innerHTML = denombinventaire[0];
             console.log(materiauxcollectible);
+        } else {
+
         }
     }
     if (id == 1) {
-        if (contenuinventaire[1]>=2) {
-
-        } else {
-            materiauxcollectible.push('oxygen');
+        if (denombinventaire[1]>=2) {
+            denombconstr[1]++
+            contenuconstr[1].innerHTML = denombconstr[1];
+            denombinventaire[1]-=2
+            contenuinventaire[1].innerHTML = denombinventaire[1];
             console.log(materiauxcollectible);
+        } else {
+
         }
     }
     if (id == 2) {
-        if (contenuinventaire[2]>=2&&contenuinventaire[5]>=1) {
-
-        } else {
+        if (denombinventaire[2]>=2&&denombinventaire[5]>=1) {
             materiauxcollectible.push('capsule');
+            denombinventaire[2]-=2
+            denombinventaire[5]-=1
+            contenuinventaire[2].innerHTML = denombinventaire[2];
+            contenuinventaire[5].innerHTML = denombinventaire[5];
             console.log(materiauxcollectible);
             tasks[id].style.display = "none";
+        } else {
+
         }
     }
     if (id == 3) {
-        if (contenuinventaire[4]>=1&&contenuinventaire[3]>=2) {
-
-        } else {
+        if (denombinventaire[4]>=1&&denombinventaire[3]>=2) {
             materiauxcollectible.push('lampe');
+            denombinventaire[4]-=1
+            denombinventaire[3]-=2
+            contenuinventaire[3].innerHTML = denombinventaire[3];
+            contenuinventaire[4].innerHTML = denombinventaire[4];
             minerais.push(food,seed)
             minerai.push('food','seed')
             console.log(materiauxcollectible);
             tasks[id].style.display = "none";
+        } else {
+
         }
     }
     if (id == 4) {
-        if (contenuinventaire[2]>=1&&contenuinventaire[5]>=1) {
-
-        } else {
-            materiauxcollectible.push('foreuse');
+        if (denombinventaire[2]>=1&&denombinventaire[5]>=1) {
+            denombconstr[3]++
+            contenuconstr[3].innerHTML = denombconstr[3];
+            denombinventaire[2]-=1
+            denombinventaire[5]-=1
+            contenuinventaire[2].innerHTML = denombinventaire[2];
+            contenuinventaire[5].innerHTML = denombinventaire[5];
             console.log(materiauxcollectible);
+        } else {
+
         }
     }
     if (id == 5) {
-        if (contenuinventaire[2]>=1&&contenuinventaire[4]>=1) {
-
-        } else {
-            materiauxcollectible.push('radiateur');
+        if (denombinventaire[2]>=1&&denombinventaire[4]>=1) {
+            denombconstr[4]++
+            contenuconstr[4].innerHTML = denombconstr[4];
+            denombinventaire[2]-=1
+            denombinventaire[4]-=1
+            contenuinventaire[2].innerHTML = denombinventaire[2];
+            contenuinventaire[4].innerHTML = denombinventaire[4];
             console.log(materiauxcollectible);
+        } else {
+
         }
     }
     if (id == 6) {
-        if (contenuinventaire[2]>=1&&contenuinventaire[0]>=1&&contenuinventaire[6]>=1) {
-
-        } else {
-            materiauxcollectible.push('plantation');
+        if (denombinventaire[2]>=1&&denombinventaire[0]>=1&&denombinventaire[6]>=1) {
+            denombconstr[5]++
+            contenuconstr[2].innerHTML = denombconstr[5];
+            denombinventaire[2]-=1
+            denombinventaire[0]-=1
+            denombinventaire[6]-=1
+            contenuinventaire[2].innerHTML = denombinventaire[2];
+            contenuinventaire[0].innerHTML = denombinventaire[0];
+            contenuinventaire[6].innerHTML = denombinventaire[6];
             console.log(materiauxcollectible);
+        } else {
+
         }
     }
 }));
 
+console.log(document.querySelector('.infobulleCraftTexte'));
 
-tasks.forEach( input => input.addEventListener('mouseover', e => {
-    let id = (e.target.id);
+tasks.forEach(input => input.addEventListener('mouseover', e => {
+    let id = e.target.id;
+    let infobulleTexte = document.querySelector('.infoCraft');
     if (id == 0) {
-        let tasksmateriaux = ['ice'];
-        infocraft.style.display = "block";
-        infocraft.innerHTML = tasksmateriaux;
+        let tasksmateriaux = '<img width="25px" src="'+ice+'">'+' : Glace';
+        infobulleTexte.style.display = "flex";
+        infobulleTexte.innerHTML = tasksmateriaux;
     }
     if (id == 1) {
-        let tasksmateriaux = ['cobalt','cobalt'];
-        infocraft.style.display = "block";
-        infocraft.innerHTML = tasksmateriaux;
+        let tasksmateriaux = '<img width="25px" src="'+cobalt+'">'+' : Cobalt x2';
+        infobulleTexte.style.display = "flex";
+        infobulleTexte.innerHTML = tasksmateriaux;
     }
     if (id == 2) {
-        let tasksmateriaux = ['iron','iron','titanium'];
-        infocraft.style.display = "block";
-        infocraft.innerHTML = tasksmateriaux;
+        let tasksmateriaux = '<img width="25px" src="'+iron+'">'+' : Fer x2, '+'<img width="25px" src="'+titanium+'">'+' : Titanium';
+        infobulleTexte.style.display = "flex";
+        infobulleTexte.innerHTML = tasksmateriaux;
     }
     if (id == 3) {
-        let tasksmateriaux = ['silicon','magnesium','magnesium'];
-        infocraft.style.display = "block";
-        infocraft.innerHTML = tasksmateriaux;
+        let tasksmateriaux = '<img width="25px" src="'+silicon+'">'+' : Silicon, '+'<img width="25px" src="'+magnesium+'">'+' : Magnesium x2';
+        infobulleTexte.style.display = "flex";
+        infobulleTexte.innerHTML = tasksmateriaux;
     }
     if (id == 4) {
-        let tasksmateriaux = ['iron','titanium'];
-        infocraft.style.display = "block";
-        infocraft.innerHTML = tasksmateriaux;
+        let tasksmateriaux = '<img width="25px" src="'+iron+'">'+' : Fer, '+'<img width="25px" src="'+titanium+'">'+' : Titanium';
+        infobulleTexte.style.display = "flex";
+        infobulleTexte.innerHTML = tasksmateriaux;
     }
     if (id == 5) {
-        let tasksmateriaux = ['iron','silicon'];
-        infocraft.style.display = "block";
-        infocraft.innerHTML = tasksmateriaux;
+        let tasksmateriaux = '<img width="25px" src="'+iron+'">'+' : Fer, '+'<img width="25px" src="'+silicon+'">'+' : Silicon';
+        infobulleTexte.style.display = "flex";
+        infobulleTexte.innerHTML = tasksmateriaux;
     }
     if (id == 6) {
-        let tasksmateriaux = ['iron','ice','seed'];
-        infocraft.style.display = "block";
-        infocraft.innerHTML = tasksmateriaux;
+        let tasksmateriaux = '<img width="25px" src="'+iron+'">'+' : Fer, '+'<img width="25px" src="'+ice+'">'+' : Glace,'+'<img width="25px" src="'+seed+'">'+' : Graine';
+        infobulleTexte.style.display = "flex";
+        infobulleTexte.innerHTML = tasksmateriaux;
     }
 }));
+
+tasks.forEach(input => input.addEventListener('mouseout', () => {
+    let infobulleTexte = document.querySelector('.infoCraft');
+    infobulleTexte.style.display = "none";
+}));
+
+document.querySelector('.tab2').addEventListener("mouseover", () => {
+    document.querySelector('.infoInventaire').style.display = "flex";
+});
+
+document.querySelector('.tab2').addEventListener("mouseout", () => {
+    document.querySelector('.infoInventaire').style.display = "none";
+});
