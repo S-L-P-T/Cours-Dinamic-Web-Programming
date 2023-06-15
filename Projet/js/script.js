@@ -509,7 +509,7 @@ tasks.forEach( input => input.addEventListener('click', e => {
     if (id == 6) {
         if (denombinventaire[2]>=1&&denombinventaire[0]>=1&&denombinventaire[6]>=1) {
             denombconstr[5]++
-            contenuconstr[2].innerHTML = denombconstr[5];
+            contenuconstr[5].innerHTML = denombconstr[5];
             denombinventaire[2]-=1
             denombinventaire[0]-=1
             denombinventaire[6]-=1
