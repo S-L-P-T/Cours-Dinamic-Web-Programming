@@ -39,3 +39,6 @@ button {
     border: 1px black solid;
 }
 
+button:hover{
+    cursor: pointer;
+}
